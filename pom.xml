@@ -5,11 +5,11 @@
 
 	<groupId>ru.leodev.examples.spring-boot</groupId>
 	<artifactId>spring-boot-web-thymeleaf</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-web-thymeleaf</name>
-	<description>Demo spring-boot and thymeleaf project for Spring Boot</description>
+	<name>Spring Boot Web Thymeleaf Example</name>
+	<description>Spring Boot Web Thymeleaf Example</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -30,20 +30,24 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
+		<!-- горячая подмена, выключенный кеш для шаблонов, включенный live reload -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- Опционально, что бы не грузить ручками bootstrap-->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7</version>
 		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- Плагин отвечает за магию делая наш WAR/JAR исполнительным(сам стартует ьain) -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
