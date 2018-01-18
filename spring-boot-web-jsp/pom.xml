@@ -10,7 +10,7 @@
 
 	<name>Spring Boot Web JSP Example</name>
 	<description>Spring Boot Web JSP Example</description>
-	<url>https://www.leodev.ru</url>
+	<url>http://leodev.ru/blog/spring-boot/spring-boot-hello-world-jsp</url>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
