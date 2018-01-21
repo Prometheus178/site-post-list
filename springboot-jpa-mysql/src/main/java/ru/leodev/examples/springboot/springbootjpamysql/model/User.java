@@ -1,7 +1,11 @@
 package ru.leodev.examples.springboot.springbootjpamysql.model;
 
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
@@ -15,6 +19,7 @@ public class User {
     @Column(name = "CREATED_DATE")
     private Date date;
 
+    // наличие пустого конструктора обязательно при работе с JPA
     public User() {
     }
 
