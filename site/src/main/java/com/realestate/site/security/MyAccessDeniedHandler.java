@@ -19,12 +19,10 @@ import java.io.IOException;
  * Custom 403 access denied handler
  */
 
-@Component("myAccessDeniedHandler")
+@Component
 public class MyAccessDeniedHandler implements AccessDeniedHandler {
 
-//    @Qualifier("myRequestCache")
-//    @Autowired
-//    private RequestCache myRequestCache;
+
     private static Logger logger = LoggerFactory.getLogger(MyAccessDeniedHandler.class);
 
     @Override
@@ -33,8 +31,10 @@ public class MyAccessDeniedHandler implements AccessDeniedHandler {
                        AccessDeniedException e) throws IOException, ServletException {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){
-            logger.info("User '" + auth.getName() + "' attempted to access the protected URL: " + httpServletRequest.getRequestURI());
+        if (auth != null) {
+            logger.info("User '" + auth.getName()
+                    + "' attempted to access the protected URL: "
+                    + httpServletRequest.getRequestURI());
         }
         httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/403");
     }

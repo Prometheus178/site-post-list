@@ -9,37 +9,24 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
-@EnableWebSecurity
+
 @Configuration
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-//
-//    @Autowired
-//    @Qualifier("myRequestCache")
-//    RequestCache myRequestCache;
-
-////    @Autowired
-//    @Qualifier("myAccessDeniedHandler")
+public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final AccessDeniedHandler accessDeniedHandler;
 
-    public WebSecurityConfig(AccessDeniedHandler accessDeniedHandler) {
+    public SpringSecurityConfig(AccessDeniedHandler accessDeniedHandler) {
         this.accessDeniedHandler = accessDeniedHandler;
     }
 
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
-//        http
-//                .requestCache()
-//                .requestCache(myRequestCache)
-//                .and()
-//                .exceptionHandling()
-//                .accessDeniedHandler(myAccessDeniedHandler);
+    protected void configure(HttpSecurity http) throws Exception {
+
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/main", "/","/all-sell","/all-rent","/address/**","/apartment/**").permitAll()
-                .antMatchers("/add-advertisement").hasAnyRole("USER")
+                .antMatchers("/main", "/", "/all-sell", "/all-rent","/address/**","/apartment/**","/advertisement/**").permitAll()
+                .antMatchers("/add-advertisement","/save-advertisement").hasAnyRole("USER")
                 .antMatchers("/admin/**").hasAnyRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
@@ -55,12 +42,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
         //in memory auth
 
-        auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
-        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
+        auth.inMemoryAuthentication()
+                .withUser("user").password("{noop}user").roles("USER")
+                .and()
+                .withUser("admin").password("{noop}admin").roles("ADMIN");
     }
 
 }

@@ -73,8 +73,5 @@ public class AdminPageController {
     }
 
 
-    @GetMapping("/403")
-    public String page403() {
-        return "admin-pages/403";
-    }
+
 }

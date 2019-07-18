@@ -8,95 +8,95 @@
 <div>
     <form method="POST" th:object="${advertisementAttribute}" action="/save-advertisement" enctype="multipart/form-data">
         <div>
-            <div class="form-group">
+            <!--<div class="form-group">-->
 
-                <label>Тип аккаунта</label>
-                <select name="accountType" id="accountType">
-                    <option th:each="accountType:${T(com.advertisements.entities.enums.AccountType).values()}"
-                            th:value="${accountType}"
-                            th:text="${accountType.getValue()}">
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Тип сделки</label>
+                <!--<label>Тип аккаунта</label>-->
+                <!--<select name="accountType" id="accountType">-->
+                    <!--<option th:each="accountType: ${T(com.realestate.site.advertisements.entities.enums.AccountType).values()}"-->
+                            <!--th:value="${accountType.name}"-->
+                            <!--th:text="${accountType.getValue()}">-->
+                    <!--</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label>Тип сделки</label>-->
 
-                <select name="dealType" id="dealType">
-                    <option th:each="dealType : ${T(com.advertisements.entities.enums.DealType).values()}"
-                            th:value="${dealType}"
-                            th:text="${dealType.getValue()}">
-                    </option>
-                </select>
+                <!--<select name="dealType" id="dealType">-->
+                    <!--<option th:each="dealType : ${T(com.realestate.site.advertisements.entities.enums.DealType).getValue()}"-->
+                            <!--th:value="${dealType}"-->
+                            <!--th:text="${dealType}">-->
+                    <!--</option>-->
+                <!--</select>-->
 
-            </div>
+            <!--</div>-->
 
-            <div class="form-group">
-                <label>Тип аренды</label>
-                <select name="rentType" id="rentType">
-                    <option th:each="rentType : ${T(com.advertisements.entities.enums.RentType).values()}"
-                            th:value="${rentType}"
-                            th:text="${rentType.getValue()}">
+            <!--<div class="form-group">-->
+                <!--<label>Тип аренды</label>-->
+                <!--<select name="rentType" id="rentType">-->
+                    <!--<option th:each="rentType : ${T(com.realestate.site.advertisements.entities.enums.RentType).getValue()}"-->
+                            <!--th:value="${rentType}"-->
+                            <!--th:text="${rentType}">-->
 
-                    </option>
-                </select>
-            </div>
-
-
-            <div class="form-group">
-                <label>Тип помещения</label>
-                <select name="realEstateType" id="realEstateType">
-                    <option th:each="realEstateType : ${T(com.advertisements.entities.enums.RealEstateType).values()}"
-                            th:value="${realEstateType}"
-                            th:text="${realEstateType.getValue()}">
-                    </option>
-                </select>
-            </div>
+                    <!--</option>-->
+                <!--</select>-->
+            <!--</div>-->
 
 
-            <div class="form-group">
-                <label>Жилая</label>
-                <select name="living" id="living">
-                    <option th:each="living : ${T(com.advertisements.entities.enums.Living).values()}"
-                            th:value="${living}"
-                            th:text="${living.getValue()}">
-                    </option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Коммерческая</label>
-                <select name="commercial" id="commercial">
-                    <option th:each="commercial : ${T(com.advertisements.entities.enums.Commercial).values()}"
-                            th:value="${commercial}"
-                            th:text="${commercial.getValue()}">
-                    </option>
-                </select>
-            </div>
+            <!--<div class="form-group">-->
+                <!--<label>Тип помещения</label>-->
+                <!--<select name="realEstateType" id="realEstateType">-->
+                    <!--<option th:each="realEstateType : ${T(com.realestate.site.advertisements.entities.enums.RealEstateType).getValue()}"-->
+                            <!--th:value="${realEstateType}"-->
+                            <!--th:text="${realEstateType}">-->
+                    <!--</option>-->
+                <!--</select>-->
+            <!--</div>-->
 
 
-            <div class="form-group">
-                <label>Район</label>
-                <select name="district" id="district">
-                    <option th:each="district : ${T(com.advertisements.entities.enums.District).values()}"
-                            th:value="${district}"
-                            th:text="${district.getValue()}">
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Адрес</label>
-                <input type="text" name="address" id="address">
-            </div>
+            <!--<div class="form-group">-->
+                <!--<label>Жилая</label>-->
+                <!--<select name="living" id="living">-->
+                    <!--<option th:each="living : ${T(com.realestate.site.advertisements.entities.enums.Living).getValue()}"-->
+                            <!--th:value="${living}"-->
+                            <!--th:text="${living}">-->
+                    <!--</option>-->
+                <!--</select>-->
+            <!--</div>-->
 
-            <div class="form-group">
-                <label>Тип жилья</label>
-                <select name="buildingType" id="buildingType">
-                    <option th:each="buildingType : ${T(com.advertisements.entities.enums.BuildingType).values()}"
-                            th:value="${buildingType}"
-                            th:text="${buildingType.getValue()}">
-                    </option>
-                </select>
-            </div>
+            <!--<div class="form-group">-->
+                <!--<label>Коммерческая</label>-->
+                <!--<select name="commercial" id="commercial">-->
+                    <!--<option th:each="commercial : ${T(com.realestate.site.advertisements.entities.enums.Commercial).getValue()}"-->
+                            <!--th:value="${commercial}"-->
+                            <!--th:text="${commercial}">-->
+                    <!--</option>-->
+                <!--</select>-->
+            <!--</div>-->
+
+
+            <!--<div class="form-group">-->
+                <!--<label>Район</label>-->
+                <!--<select name="district" id="district">-->
+                    <!--<option th:each="district : ${T(com.realestate.site.advertisements.entities.enums.District).getValue()}"-->
+                            <!--th:value="${district}"-->
+                            <!--th:text="${district}">-->
+                    <!--</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label>Адрес</label>-->
+                <!--<input type="text" name="address" id="address">-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+                <!--<label>Тип жилья</label>-->
+                <!--<select name="buildingType" id="buildingType">-->
+                    <!--<option th:each="buildingType : ${T(com.realestate.site.advertisements.entities.enums.BuildingType).getValue()}"-->
+                            <!--th:value="${buildingType}"-->
+                            <!--th:text="${buildingType}">-->
+                    <!--</option>-->
+                <!--</select>-->
+            <!--</div>-->
 
 
             <div class="form-group">
@@ -126,15 +126,15 @@
             </div>
 
 
-            <div class="form-group">
-                <label>Число комнат</label>
-                <select name="numberOfRooms" id="numberOfRooms">
-                    <option th:each="numberOfRooms : ${T(com.advertisements.entities.enums.NumberOfRooms).values()}"
-                            th:value="${numberOfRooms}"
-                            th:text="${numberOfRooms.getValue()}">
-                    </option>
-                </select>
-            </div>
+                <!--<div class="form-group">-->
+                    <!--<label>Число комнат</label>-->
+                    <!--<select name="numberOfRooms" id="numberOfRooms">-->
+                        <!--<option th:each="numberOfRooms : ${T(com.realestate.site.advertisements.entities.enums.NumberOfRooms).getValue()}"-->
+                                <!--th:value="${numberOfRooms}"-->
+                                <!--th:text="${numberOfRooms}">-->
+                        <!--</option>-->
+                    <!--</select>-->
+                <!--</div>-->
 
             <div class="form-group">
                 <label>Площадь</label>
@@ -156,15 +156,15 @@
                 <input type="number" name="floor" id="floor">
             </div>
 
-            <div class="form-group">
-                <label>Ремонт</label>
-                <select name="repairs" id="repairs">
-                    <option th:each="repairs : ${T(com.advertisements.entities.enums.Repairs).values()}"
-                            th:value="${repairs}"
-                            th:text="${repairs.getValue()}">
-                    </option>
-                </select>
-            </div>
+            <!--<div class="form-group">-->
+                <!--<label>Ремонт</label>-->
+                <!--<select name="repairs" id="repairs">-->
+                    <!--<option th:each="repairs : ${T(com.realestate.site.advertisements.entities.enums.Repairs).getValue()}"-->
+                            <!--th:value="${repairs}"-->
+                            <!--th:text="${repairs}">-->
+                    <!--</option>-->
+                <!--</select>-->
+            <!--</div>-->
 
             <div class="table">
                 животные <input type="checkbox" name="animal" id="animal">
