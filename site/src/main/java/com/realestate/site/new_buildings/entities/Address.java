@@ -11,11 +11,11 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "addresses")
+//@Table(name = "addresses")
 public class Address extends BaseEntity {
-    @Column(name = "address")
+//    @Column(name = "address")
     private String address;
-    @Column(name = "image")
+//    @Column(name = "image")
     private byte[] image;
 
 }

@@ -9,7 +9,7 @@ import javax.persistence.Column;
 
 @Data
 public class Admin extends Person {
-    @Column(name = "password")
+//    @Column(name = "password")
     private String password;
 
 }

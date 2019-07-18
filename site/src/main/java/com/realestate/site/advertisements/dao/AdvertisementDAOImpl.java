@@ -4,6 +4,7 @@ package com.realestate.site.advertisements.dao;
 import com.realestate.site.advertisements.entities.Advertisement;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,11 +14,8 @@ import java.util.List;
 @Repository
 public class AdvertisementDAOImpl implements AdvertisementDAO {
 
+    @Autowired
     private SessionFactory sessionFactory;
-
-    public AdvertisementDAOImpl(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
 
 
     public AdvertisementDAOImpl() {
@@ -25,14 +23,14 @@ public class AdvertisementDAOImpl implements AdvertisementDAO {
 
     @Transactional
     public List<Advertisement> findAll() {
-        Session session = sessionFactory.getCurrentSession();
+        Session session =  this.sessionFactory.getCurrentSession();
         List<Advertisement> advertisements = session.createNativeQuery("select * from advertisements order by date_time desc ",Advertisement.class).list();
         return advertisements;
     }
 
 
     public Advertisement findById(Long aLong) {
-        Session session = sessionFactory.openSession();
+        Session session = this.sessionFactory.openSession();
         session.beginTransaction();
         Advertisement advertisement = session.load(Advertisement.class, aLong);
         session.getTransaction().commit();
@@ -41,7 +39,7 @@ public class AdvertisementDAOImpl implements AdvertisementDAO {
 
     @Transactional
     public Advertisement save(Advertisement object) {
-        Session session = sessionFactory.getCurrentSession();
+        Session session = this.sessionFactory.getCurrentSession();
         session.save(object);
         return object;
     }
@@ -54,14 +52,14 @@ public class AdvertisementDAOImpl implements AdvertisementDAO {
 
     @Transactional
     public List<Advertisement> findAllSell() {
-        Session session = sessionFactory.getCurrentSession();
+        Session session = this.sessionFactory.getCurrentSession();
         List<Advertisement> advertisements = session.createNativeQuery("select * from advertisements where deal_type='SELL' order by date_time desc ",Advertisement.class).list();
         return advertisements;
     }
 
     @Transactional
     public List<Advertisement> findAllRent() {
-        Session session = sessionFactory.getCurrentSession();
+        Session session = this.sessionFactory.getCurrentSession();
         List<Advertisement> advertisements = session.createNativeQuery("select * from advertisements where deal_type='RENT' order by date_time desc",Advertisement.class).list();
         return advertisements;
     }

@@ -13,123 +13,123 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
-@Table(name = "advertisements")
+//@Table(name = "advertisements")
 @Data
 @Entity
 public class Advertisement extends BaseEntity {
 
     //todo 1 add String washer
     //todo 2 correct design add advertisement
-    @Column(name = "title")
+//    @Column(name = "title")
     private String title;
-    @Column(name = "date_time")
+//    @Column(name = "date_time")
     private LocalDateTime dateTime;
-    @Column(name = "account_type")
+//    @Column(name = "account_type")
     private AccountType accountType;
-    @Column(name = "deal_type")
+//    @Column(name = "deal_type")
     private DealType dealType;
-    @Column(name = "rent_type")
+//    @Column(name = "rent_type")
     private RentType rentType;
-    @Column(name = "real_estate_type")
+//    @Column(name = "real_estate_type")
     private RealEstateType realEstateType;
-    @Column(name = "living")
+//    @Column(name = "living")
     private Living living;
-    @Column(name = "commercial")
+//    @Column(name = "commercial")
 
     private Commercial commercial;
-    @Column(name = "district")
+//    @Column(name = "district")
 
     private District district;
-    @Column(name = "address")
+//    @Column(name = "address")
 
     private String address;
 
-    @Column(name = "building_type")
+//    @Column(name = "building_type")
     private BuildingType buildingType;
 
-    @Column(name = "description")
+//    @Column(name = "description")
     private String description;
 
-    @Column(name = "photo")
+//    @Column(name = "photo")
     private byte[] photo;
 
-    @Column(name = "price")
+//    @Column(name = "price")
     private int price;
 
-    @Column(name = "communal_payments")
+//    @Column(name = "communal_payments")
     private boolean communalPayments;
 
-    @Column(name = "number_of_rooms")
+//    @Column(name = "number_of_rooms")
     private NumberOfRooms numberOfRooms;
 
-    @Column(name = "repairs")
+//    @Column(name = "repairs")
     private Repairs repairs;
 
-    @Column(name = "floor")
+//    @Column(name = "floor")
     private int floor;
 
-    @Column(name = "square")
+//    @Column(name = "square")
     private double square;
 
-    @Column(name = "deposit")
+//    @Column(name = "deposit")
     private int deposit;
-
-    @Column(name = "name_of_complex")
+//
+//    @Column(name = "name_of_complex")
     private String nameOfComplex;
 
-    @Column(name = "year_of_construction")
+//    @Column(name = "year_of_construction")
     private int yearOfConstruction;
-    @Column(name = "squareOfLiving")
+//    @Column(name = "squareOfLiving")
 
     private double squareOfLiving;
 
-    @Column(name = "square_of_kitchen")
+//    @Column(name = "square_of_kitchen")
     private double squareOfKitchen;
 
-    @Column(name = "animal")
+//    @Column(name = "animal")
     private boolean animal;
 
-    @Column(name = "furniture")
+//    @Column(name = "furniture")
     private boolean furniture;
 
-    @Column(name = "window_inside")
+//    @Column(name = "window_inside")
     private boolean windowInside;
 
-    @Column(name = "window_outside")
+//    @Column(name = "window_outside")
     private boolean windowOutside;
 
-    @Column(name = "balcony")
+//    @Column(name = "balcony")
     private boolean balcony;
 
-    @Column(name = "loggia")
+//    @Column(name = "loggia")
     private boolean loggia;
 
-    @Column(name = "tv")
+//    @Column(name = "tv")
     private boolean tv;
 
-    @Column(name = "phone")
+//    @Column(name = "phone")
     private boolean phone;
-    @Column(name = "bath")
+//    @Column(name = "bath")
 
     private boolean bath;
 
-    @Column(name = "shower")
+//    @Column(name = "shower")
     private boolean shower;
 
-    @Column(name = "conditioner")
+//    @Column(name = "conditioner")
     private boolean conditioner;
 
-    @Column(name = "internet")
+//    @Column(name = "internet")
     private boolean internet;
-    @Column(name = "separate_bathroom")
+//    @Column(name = "separate_bathroom")
     private boolean separateBathroom;
 
-    @Column(name = "combined_bathroom")
+//    @Column(name = "combined_bathroom")
     private boolean combinedBathroom;
 
-    @Column(name = "lift")
+//    @Column(name = "lift")
     private boolean lift;
-    @Column(name = "ramp")
+//    @Column(name = "ramp")
     private boolean ramp;
 
 

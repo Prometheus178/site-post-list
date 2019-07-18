@@ -5,6 +5,7 @@ import com.realestate.site.new_buildings.entities.Apartment;
 import org.hibernate.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,11 +16,8 @@ public class ApartmentDAOImpl implements ApartmentDAO {
 
     private Logger logger = LoggerFactory.getLogger(ApartmentDAOImpl.class);
 
+    @Autowired
     private SessionFactory sessionFactory;
-
-    public ApartmentDAOImpl(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
 
     ApartmentDAOImpl(){}
 

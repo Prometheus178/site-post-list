@@ -19,6 +19,7 @@ import java.util.stream.IntStream;
 @Controller
 public class MainPageController {
 
+
     private AdvertisementService advertisementService;
 
     public MainPageController(AdvertisementService advertisementService) {

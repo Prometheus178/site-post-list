@@ -8,7 +8,7 @@ import javax.persistence.Column;
 @Data
 public class User extends Person {
 
-    @Column(name = "password")
+//    @Column(name = "password")
     private String password;
 
 }
