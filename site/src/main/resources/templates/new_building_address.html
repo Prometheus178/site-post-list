@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<section class="probootstrap-section probootstrap-section-lighter">
+    <div>
+        <div th:if="${not #lists.isEmpty(listOfAddress)}">
+            <div class="container">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th> Адрес</th>
+                        <th> Квартиры</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="address : ${listOfAddress}">
+                        <td th:text="${address.address}">address</td>
+                        <td><a th:href="@{'/address/' + ${address.id} + '/apartment'}">список квартир</a></td>
+                        <td>
+                            <div class="col-md-6">
+                            <img src="/resources/img/slider_4.jpg"
+                                 th:src="@{'/address/' + ${address.id} + '/address-image'}"
+                                 width="200" height="200">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

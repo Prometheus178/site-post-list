@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.realestate.site.advertisements.entities.Advertisement" table="advertisements" schema="real-estate-site">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="accountType" column="account_type"/>
+        <property name="address" column="address"/>
+        <property name="buildingType" column="building_type"/>
+        <property name="commercial" column="commercial"/>
+        <property name="communalPayments" column="communal_payments"/>
+        <property name="dateTime" column="date_time"/>
+        <property name="dealType" column="deal_type">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.realestate.site.advertisements.entities.enums.DealType</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+        <property name="description" column="description"/>
+        <property name="district" column="district"/>
+        <property name="floor" column="floor"/>
+        <property name="living" column="living"/>
+        <property name="numberOfRooms" column="number_of_rooms"/>
+        <property name="photo" column="photo"/>
+        <property name="price" column="price"/>
+        <property name="realEstateType" column="real_estate_type"/>
+        <property name="rentType" column="rent_type"/>
+        <property name="repairs" column="repairs"/>
+        <property name="square" column="square"/>
+        <property name="title" column="title"/>
+        <property name="animal" column="animal"/>
+        <property name="balcony" column="balcony"/>
+        <property name="bath" column="bath"/>
+        <property name="combinedBathroom" column="combined_bathroom"/>
+        <property name="conditioner" column="conditioner"/>
+        <property name="deposit" column="deposit"/>
+        <property name="furniture" column="furniture"/>
+        <property name="internet" column="internet"/>
+        <property name="lift" column="lift"/>
+        <property name="loggia" column="loggia"/>
+        <property name="nameOfComplex" column="name_of_complex"/>
+        <property name="phone" column="phone"/>
+        <property name="ramp" column="ramp"/>
+        <property name="separateBathroom" column="separate_bathroom"/>
+        <property name="shower" column="shower"/>
+        <property name="squareOfKitchen" column="square_of_kitchen"/>
+        <property name="squareOfLiving" column="square_of_living"/>
+        <property name="tv" column="tv"/>
+        <property name="windowInside" column="windows_inside"/>
+        <property name="windowOutside" column="windows_outside"/>
+        <property name="yearOfConstruction" column="year_of_construction"/>
+
+    </class>
+</hibernate-mapping>

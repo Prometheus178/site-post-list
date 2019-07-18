@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.realestate.site.new_buildings.entities.Apartment" table="apartments" schema="real-estate-site">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <many-to-one name="address" class="com.realestate.site.new_buildings.entities.Address" lazy="false">
+            <column name="address_id" />
+        </many-to-one>
+        <property name="image" column="image"/>
+        <property name="floor" column="floor"/>
+        <property name="fullPrice" column="full_price"/>
+        <property name="numberOfApartment" column="number_of_apartment"/>
+        <property name="numberOfRooms" column="number_of_rooms"/>
+        <property name="pricePerSquare" column="price_per_square"/>
+        <property name="square" column="square"/>
+        <property name="status" column="status">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.realestate.site.new_buildings.entities.Status</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+    </class>
+
+</hibernate-mapping>

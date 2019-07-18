@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/resources/css/main.css">
+    <title>Registration Page</title>
+</head>
+<body>
+
+<div>
+    <form name="form_login" action="/j_spring_security_check" method="post">
+        <table>
+            <tr>
+                <td>User:</td>
+                <td><input type='text' name='user_login' value=''></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type='password' name='password_login' /></td>
+            </tr>
+            <tr>
+                <td><input name="submit" type="submit" value="submit" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<a th:text="${error}"></a>
+</body>
+</html>

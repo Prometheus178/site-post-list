@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/real-estate-site?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+
+    mapping-resources:
+    - META-INF/Advertisement.xml
+    - META-INF/Apartment.xml
+    - META-INF/Address.xml
+    - META-INF/Admin.xml
+    - META-INF/User.xml
+    - META-INF/Customer.xml

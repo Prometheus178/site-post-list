@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head"></head>
+<div th:replace="fragments/header :: header"></div>
+<body id="page-top">
+
+
+<!-- Page Heading -->
+<section class="probootstrap-section probootstrap-section-lighter">
+
+    <div>
+        <label class="h3 mb-2 text-gray-800">Добавить квартиру на продажу</label>
+
+        <form th:object="${address}" th:action="@{'/admin/save-apartment/' + ${address.id}}" , method="post">
+            <div>
+                <!--<a>image</a> <input type="file" name="image" id="image"><br/>-->
+                <a>floor</a> <input type="number" name="floor" id="floor"><br/>
+                <a>numberOfApartment</a><input type="number" name="numberOfApartment"
+                                               id="numberOfApartment"><br/>
+                <a>numberOfRooms</a> <input type="number" name="numberOfRooms" id="numberOfRooms"><br/>
+                <a>square</a> <input type="number" name="square" id="square"><br/>
+                <a>pricePerSquare</a> <input type="number" name="pricePerSquare"
+                                             id="pricePerSquare"><br/>
+                <a>fullPrice</a> <input type="number" name="fullPrice" id="fullPrice">
+                <a>status</a>
+                <select name="status" id="status">
+                    <option value="" selected disabled hidden>Выберите статус</option>
+                    <option th:each="status : ${T(com.new_buildings.entities.Status).values()}"
+                            th:value="${status}"
+                            th:text="${status.getValue()}">
+                    </option>
+                </select>
+            </div>
+            <input type="submit" value="Save"/>
+            <input type="reset" value="Reset"/>
+        </form>
+    </div>
+</section>
+
+
+</body>
+
+</html>

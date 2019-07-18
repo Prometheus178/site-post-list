@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+
+<div>
+    <form method="POST" th:object="${advertisementAttribute}" action="/save-advertisement" enctype="multipart/form-data">
+        <div>
+            <div class="form-group">
+
+                <label>Тип аккаунта</label>
+                <select name="accountType" id="accountType">
+                    <option th:each="accountType:${T(com.advertisements.entities.enums.AccountType).values()}"
+                            th:value="${accountType}"
+                            th:text="${accountType.getValue()}">
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Тип сделки</label>
+
+                <select name="dealType" id="dealType">
+                    <option th:each="dealType : ${T(com.advertisements.entities.enums.DealType).values()}"
+                            th:value="${dealType}"
+                            th:text="${dealType.getValue()}">
+                    </option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label>Тип аренды</label>
+                <select name="rentType" id="rentType">
+                    <option th:each="rentType : ${T(com.advertisements.entities.enums.RentType).values()}"
+                            th:value="${rentType}"
+                            th:text="${rentType.getValue()}">
+
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label>Тип помещения</label>
+                <select name="realEstateType" id="realEstateType">
+                    <option th:each="realEstateType : ${T(com.advertisements.entities.enums.RealEstateType).values()}"
+                            th:value="${realEstateType}"
+                            th:text="${realEstateType.getValue()}">
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label>Жилая</label>
+                <select name="living" id="living">
+                    <option th:each="living : ${T(com.advertisements.entities.enums.Living).values()}"
+                            th:value="${living}"
+                            th:text="${living.getValue()}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Коммерческая</label>
+                <select name="commercial" id="commercial">
+                    <option th:each="commercial : ${T(com.advertisements.entities.enums.Commercial).values()}"
+                            th:value="${commercial}"
+                            th:text="${commercial.getValue()}">
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label>Район</label>
+                <select name="district" id="district">
+                    <option th:each="district : ${T(com.advertisements.entities.enums.District).values()}"
+                            th:value="${district}"
+                            th:text="${district.getValue()}">
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Адрес</label>
+                <input type="text" name="address" id="address">
+            </div>
+
+            <div class="form-group">
+                <label>Тип жилья</label>
+                <select name="buildingType" id="buildingType">
+                    <option th:each="buildingType : ${T(com.advertisements.entities.enums.BuildingType).values()}"
+                            th:value="${buildingType}"
+                            th:text="${buildingType.getValue()}">
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label>Описание</label>
+                <input type="text" name="description" id="description">
+            </div>
+
+            <div class="form-group">
+                <label>Фото</label>
+                <input type="file" name="image">
+
+            </div>
+
+            <div>
+                <label>Цена</label>
+                <input type="number" name="price" id="price">
+            </div>
+
+            <div class="form-group">
+                <label>Депозит</label>
+                <input type="number" name="deposit" id="deposit">
+            </div>
+
+            <div class="form-group">
+                <label>Коммунальные включены</label>
+                <input type="checkbox" name="communalPayments" id="communalPayments">
+            </div>
+
+
+            <div class="form-group">
+                <label>Число комнат</label>
+                <select name="numberOfRooms" id="numberOfRooms">
+                    <option th:each="numberOfRooms : ${T(com.advertisements.entities.enums.NumberOfRooms).values()}"
+                            th:value="${numberOfRooms}"
+                            th:text="${numberOfRooms.getValue()}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Площадь</label>
+                <input type="number" name="square" id="square">
+            </div>
+
+            <div class="form-group">
+                <label>Жилая площадь</label>
+                <input type="number" name="squareOfLiving" id="squareOfLiving">
+            </div>
+
+            <div class="form-group">
+                <label>Площадь кухни</label>
+                <input type="number" name="squareOfKitchen" id="squareOfKitchen">
+            </div>
+
+            <div class="form-group">
+                <label>Этаж</label>
+                <input type="number" name="floor" id="floor">
+            </div>
+
+            <div class="form-group">
+                <label>Ремонт</label>
+                <select name="repairs" id="repairs">
+                    <option th:each="repairs : ${T(com.advertisements.entities.enums.Repairs).values()}"
+                            th:value="${repairs}"
+                            th:text="${repairs.getValue()}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="table">
+                животные <input type="checkbox" name="animal" id="animal">
+                мебель <input type="checkbox" name="furniture" id="furniture">
+                кухонная мебель <input type="checkbox" name="furnitureInTheKitchen" id="furnitureInTheKitchen">
+                окно внутрь <input type="checkbox" name="windowInside" id="windowInside">
+                окно наружу <input type="checkbox" name="windowOutside" id="windowOutside">
+                балкон <input type="checkbox" name="balcony" id="balcony">
+                лоджия <input type="checkbox" name="loggia" id="loggia">
+                холодильник <input type="checkbox" name="fridge" id="fridge">
+                <!--стиральная машина <input type="checkbox" name="washer" id="washer">-->
+                телевизор <input type="checkbox" name="tv" id="tv">
+                телефон <input type="checkbox" name="phone" id="phone">
+                ванна <input type="checkbox" name="bath" id="bath">
+                душ <input type="checkbox" name="shower" id="shower">
+                кондиционер <input type="checkbox" name="conditioner" id="conditioner">
+                интернет <input type="checkbox" name="internet" id="internet">
+                раздельный санузел<input type="checkbox" name="separateBathroom" id="separateBathroom">
+                совмещенный санузел<input type="checkbox" name="combinedBathroom" id="combinedBathroom">
+                лифт <input type="checkbox" name="lift" id="lift">
+                трап <input type="checkbox" name="ramp" id="ramp">
+            </div>
+
+            <div class="form-group">
+                <label>Название комплекса</label>
+                <input type="text" name="nameOfComplex" id="nameOfComplex">
+            </div>
+
+            <div class="form-group">
+                <label>Год постройки</label>
+                <input type="number" name="yearOfConstruction" id="yearOfConstruction">
+            </div>
+            <div class="form-group">
+                <label>Заголовок</label>
+                <input type="text" name="title" id="title">
+            </div>
+        </div>
+        <input type="submit" value="Подать объявление"/>
+    </form>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
