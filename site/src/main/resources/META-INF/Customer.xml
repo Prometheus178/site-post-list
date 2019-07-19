@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.realestate.site.users.entities.Customer" table="customers" schema="real-estate-site">
+    <class name="com.realestate.site.models.users.entities.Customer" table="customers" schema="real-estate-site">
         <id name="id" column="id">
             <generator class="native"/>
         </id>
@@ -14,7 +14,7 @@
         <property name="email" column="email"/>
         <property name="mortgage" column="mortgage"/>
         <property name="phoneNumber" column="phone_number"/>
-        <many-to-one name="apartment" class="com.realestate.site.new_buildings.entities.Apartment" lazy="false">
+        <many-to-one name="apartment" class="com.realestate.site.models.new_buildings.model.Apartment" lazy="false">
             <column name="new_building_id"/>
         </many-to-one>
     </class>

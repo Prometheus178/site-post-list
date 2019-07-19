@@ -2,15 +2,13 @@ package com.realestate.site.controllers;
 
 
 
-import com.realestate.site.new_buildings.entities.Address;
-import com.realestate.site.new_buildings.entities.Apartment;
-import com.realestate.site.new_buildings.services.interfaces.AddressService;
-import com.realestate.site.new_buildings.services.interfaces.ApartmentService;
-import org.springframework.http.MediaType;
+import com.realestate.site.models.new_building.Address;
+import com.realestate.site.models.new_building.Apartment;
+import com.realestate.site.services.new_building.interfaces.AddressService;
+import com.realestate.site.services.new_building.interfaces.ApartmentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
@@ -26,10 +24,10 @@ public class AdminPageController {
     private AddressService addressService;
 
 
-    public AdminPageController(ApartmentService apartmentService, AddressService addressService) {
-        this.apartmentService = apartmentService;
-        this.addressService = addressService;
-    }
+//    public AdminPageController(ApartmentService apartmentService, AddressService addressService) {
+//        this.apartmentService = apartmentService;
+//        this.addressService = addressService;
+//    }
 
 
     @GetMapping("/admin-page")

@@ -1,7 +1,7 @@
 package com.realestate.site.controllers;
 
-import com.realestate.site.users.entities.User;
-import com.realestate.site.users.services.impl.UserService;
+import com.realestate.site.models.user.User;
+import com.realestate.site.services.user.impl.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;

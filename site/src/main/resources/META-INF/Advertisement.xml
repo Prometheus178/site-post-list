@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.realestate.site.advertisements.entities.Advertisement" table="advertisements" schema="real-estate-site">
+    <class name="com.realestate.site.models.advertisements.entities.Advertisement" table="advertisements" schema="real-estate-site">
         <id name="id" column="id">
             <generator class="native"/>
         </id>
@@ -16,7 +16,7 @@
         <property name="dateTime" column="date_time"/>
         <property name="dealType" column="deal_type">
             <type name="org.hibernate.type.EnumType">
-                <param name="enumClass">com.realestate.site.advertisements.entities.enums.DealType</param>
+                <param name="enumClass">com.realestate.site.models.advertisement.enums.DealType</param>
                 <param name="useNamed">true</param>
             </type>
         </property>
