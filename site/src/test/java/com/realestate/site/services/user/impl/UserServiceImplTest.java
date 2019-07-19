@@ -13,19 +13,19 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class UserServiceTest {
+public class UserServiceImplTest {
     @Mock
     private UserRepository mockUserRepository;
     @Mock
     private RoleRepository mockRoleRepository;
 
-    private UserService userServiceUnderTest;
+    private UserServiceImpl userServiceImplUnderTest;
     private User user;
 
     @Before
     public void setUp(){
         initMocks(this);
-        userServiceUnderTest = new UserService(mockUserRepository,mockRoleRepository);
+//        userServiceImplUnderTest = new UserServiceImpl(mockUserRepository,mockRoleRepository);
         user = new User();
         user.setId(1L);
         user.setUsername("username");
@@ -38,7 +38,7 @@ public class UserServiceTest {
     @Test
     public void findUserByName() {
         final String email = "test@email.com";
-        final User result = userServiceUnderTest.findUserByEmail(email);
+        final User result = userServiceImplUnderTest.findUserByEmail(email);
         assertEquals(email,result.getEmail());
     }
 
@@ -50,7 +50,7 @@ public class UserServiceTest {
         user.setUsername("username");
         user.setPassword("password");
         user.setEmail("test@email.com");
-        User result = userServiceUnderTest.saveUser(user);
+        User result = userServiceImplUnderTest.saveUser(user);
 
         assertEquals(email, result.getEmail());
     }

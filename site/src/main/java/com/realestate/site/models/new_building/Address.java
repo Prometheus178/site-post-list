@@ -1,18 +1,17 @@
 package com.realestate.site.models.new_building;
 
 
-import com.realestate.site.parent.BaseEntity;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Entity
 @Data
-
 @Table(name = "addresses")
-public class Address extends BaseEntity {
+@Entity
+public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(name = "address")
     private String address;
     @Column(name = "image")

@@ -3,7 +3,7 @@ package com.realestate.site.controllers;
 
 
 //import com.realestate.site.advertisements.services.AdvertisementService;
-import com.realestate.site.services.advetisement.AdvertisementServiceTEST;
+import com.realestate.site.services.advetisement.impl.AdvertisementServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +15,9 @@ import java.util.Optional;
 public class MainPageController {
 
 
-    private AdvertisementServiceTEST advertisementService;
+    private AdvertisementServiceImpl advertisementService;
 
-    public MainPageController(AdvertisementServiceTEST advertisementService) {
+    public MainPageController(AdvertisementServiceImpl advertisementService) {
         this.advertisementService = advertisementService;
     }
 

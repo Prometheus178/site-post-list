@@ -1,25 +1,27 @@
-package com.realestate.site.services.advetisement;
+package com.realestate.site.services.advetisement.impl;
 
 import com.realestate.site.models.advertisement.Advertisement;
 import com.realestate.site.models.advertisement.enums.DealType;
 import com.realestate.site.repositories.advertisement.AdvertisementRepository;
+import com.realestate.site.services.advetisement.interfaces.AdvertisementService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class AdvertisementServiceTEST {
+public class AdvertisementServiceImpl implements AdvertisementService {
 
     private AdvertisementRepository advertisementRepository;
 
-    public AdvertisementServiceTEST(AdvertisementRepository advertisementRepository) {
+    public AdvertisementServiceImpl(AdvertisementRepository advertisementRepository) {
         this.advertisementRepository = advertisementRepository;
     }
-
-    public List<Advertisement> findAllByDateTime(){
+    @Override
+    public List<Advertisement> findAllAdvertisementByDateTime(){
         return advertisementRepository.findAll();
     }
-    public List<Advertisement> findAllByDealType(DealType dealType){
+    @Override
+    public List<Advertisement> findAllAdvertisementByDealType(DealType dealType){
         return advertisementRepository.findAllByDealType(dealType);
     }
 

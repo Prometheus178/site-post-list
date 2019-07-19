@@ -1,28 +1,36 @@
 package com.realestate.site.models.new_building;
 
 
-import com.realestate.site.parent.BaseEntity;
 import lombok.Data;
 
+import javax.persistence.*;
+
+
 @Data
-public class Apartment extends BaseEntity {
-//    @Column(name = "address")
+@Entity
+@Table(name = "apartments")
+public class Apartment{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
     private Address address;
-//    @Column(name = "image")
+    @Column(name = "image")
     private byte[] image;
-//    @Column(name = "floor")
+    @Column(name = "floor")
     private int floor;
-//    @Column(name = "numberOfApartment")
+    @Column(name = "numberOfApartment")
     private int numberOfApartment;
-//    @Column(name = "number_of_rooms")
+    @Column(name = "number_of_rooms")
     private int numberOfRooms;
-//    @Column(name = "square")
+    @Column(name = "square")
     private double square;
-//    @Column(name = "price_per_square")
+    @Column(name = "price_per_square")
     private int pricePerSquare;
-//    @Column(name = "full_price")
+    @Column(name = "full_price")
     private int fullPrice;
-//    @Column(name = "status")
+    @Column(name = "status")
     private Status status;
 
 

@@ -2,7 +2,7 @@
 //
 //
 //import com.realestate.site.models.advertisements.entities.Advertisement;
-//import com.realestate.site.parent.CrudService;
+//import com.realestate.site.daos.dao.CrudService;
 //import org.springframework.data.domain.Page;
 //import org.springframework.data.domain.Pageable;
 //

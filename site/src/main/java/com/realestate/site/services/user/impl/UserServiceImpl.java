@@ -4,28 +4,24 @@ import com.realestate.site.repositories.user.RoleRepository;
 import com.realestate.site.repositories.user.UserRepository;
 import com.realestate.site.models.user.Role;
 import com.realestate.site.models.user.User;
+import com.realestate.site.services.user.interfaces.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.HashSet;
 
 @Service
-public class UserService {
-
+public class UserServiceImpl implements UserService {
+    @Autowired
     private UserRepository userRepository;
-
+    @Autowired
     private RoleRepository roleRepository;
-
-
-    public UserService( UserRepository userRepository, RoleRepository roleRepository) {
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
-    }
-
+    @Override
     public User findUserByEmail(String email){
         return userRepository.findByEmail(email);
     }
-
+    @Override
     public User saveUser(User user){
         user.setActive(1);
         Role userRole = roleRepository.findByRole("USER");

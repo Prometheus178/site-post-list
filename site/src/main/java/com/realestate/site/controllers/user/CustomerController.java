@@ -9,11 +9,11 @@ public class CustomerController {
 
 ////    private CustomerService customerService;
 //    private ApartmentService apartmentService;
-//    private AddressService addressService;
+//    private AddressServiceImpl addressService;
 //
 //    public CustomerController(CustomerService customerService,
 //                              ApartmentService apartmentService,
-//                              AddressService addressService) {
+//                              AddressServiceImpl addressService) {
 //        this.customerService = customerService;
 //        this.apartmentService = apartmentService;
 //        this.addressService = addressService;

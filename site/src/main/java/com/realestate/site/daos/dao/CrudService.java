@@ -1,4 +1,4 @@
-package com.realestate.site.parent;
+package com.realestate.site.daos.dao;
 
 import java.util.List;
 

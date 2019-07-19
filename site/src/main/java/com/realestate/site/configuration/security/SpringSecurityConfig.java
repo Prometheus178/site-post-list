@@ -18,18 +18,14 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final AccessDeniedHandler accessDeniedHandler;
 
+    @Autowired
     private DataSource dataSource;
     @Value("${spring.queries.users-query}")
     private String usersQuery;
     @Value("${spring.queries.roles-query}")
     private String rolesQuery;
 
-
-    public SpringSecurityConfig(AccessDeniedHandler accessDeniedHandler) {
-        this.accessDeniedHandler = accessDeniedHandler;
-    }
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {

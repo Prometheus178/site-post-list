@@ -1,14 +1,18 @@
 package com.realestate.site.models.user;
 
-import com.realestate.site.parent.BaseEntity;
 import lombok.Data;
 
+import javax.persistence.*;
 import java.util.Set;
 
 @Data
-public class Role extends BaseEntity {
-
+@Entity
+@Table(name = "roles")
+public class Role {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id")
+    private Long id;
+    @Column(name = "role")
     private String role;
-    private Set<User> users;
-
 }
