@@ -1,7 +1,6 @@
-package com.realestate.site.config;
+package com.realestate.site.configuration;
 
 
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import com.realestate.site.advertisements.entities.Advertisement;
@@ -60,7 +59,7 @@ public class HibernateConfiguration {
     }
 
 
-    @Bean(name = "sessionFactory")
+    @Bean(name = "sessionFactoryDAO")
     public SessionFactory getSessionFactory(final DataSource dataSource) {
         final LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
         sessionBuilder.addResource("/META-INF/Advertisement.xml");
