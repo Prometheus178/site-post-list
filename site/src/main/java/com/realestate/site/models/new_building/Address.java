@@ -10,7 +10,8 @@ import javax.persistence.*;
 @Entity
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "address_id")
     private Long id;
     @Column(name = "address")
     private String address;

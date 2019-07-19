@@ -11,7 +11,8 @@ import javax.persistence.*;
 @Table(name = "apartments")
 public class Apartment{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "apartment_id")
     private Long id;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")

@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Table(name = "advertisements")
 public class Advertisement{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "advertisement_id")
     private Long id;
     //todo 1 add String washer
