@@ -23,7 +23,6 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login(Principal principal) {
-
 //        if (principal != null) {
 //            return "redirect:/main";
 //        }

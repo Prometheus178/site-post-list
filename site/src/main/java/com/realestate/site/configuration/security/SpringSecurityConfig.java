@@ -21,11 +21,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private DataSource dataSource;
+
     @Value("${spring.queries.users-query}")
     private String usersQuery;
     @Value("${spring.queries.roles-query}")
     private String rolesQuery;
-
+    @Value("${spring.admin.username}")
+    private String username;
+    @Value("${spring.admin.password}")
+    private String password;
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -34,13 +38,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .usersByUsernameQuery(usersQuery)
                 .authoritiesByUsernameQuery(rolesQuery)
                 .dataSource(dataSource);
+//        in memory;
+//        auth.inMemoryAuthentication().withUser(username).password(password).roles("ADMIN");
 
-        //in memory auth
-
-//        auth.inMemoryAuthentication()
-//                .withUser("user").password("{noop}user").roles("USER")
-//                .and()
-//                .withUser("admin").password("{noop}admin").roles("ADMIN");
     }
 
     @Override
@@ -48,22 +48,24 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers("/main", "/", "/all-sell", "/all-rent", "/address/**", "/apartment/**", "/advertisement/**").permitAll()
+                .antMatchers("/", "/main/**", "/address/**", "/apartment/**", "/advertisement/**").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/registration").permitAll()
-                .antMatchers("/add-advertisement", "/save-advertisement").hasAnyRole("USER")
-                .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .anyRequest().authenticated()
-                .and()
+                .antMatchers("/add-advertisement", "/save-advertisement").hasAnyAuthority("USER","ADMIN").anyRequest().authenticated()
+                .antMatchers("/admin/**").hasAnyAuthority("ADMIN").anyRequest().authenticated()
+                .and().csrf().disable()
+
+
                 .formLogin()
-                .loginPage("/login").failureUrl("/login?error=true")
+                .loginPage("/login")
+                .failureUrl("/login?error=true")
                 .defaultSuccessUrl("/main")
                 .usernameParameter("email")
                 .passwordParameter("password")
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/main")
+                .logoutSuccessUrl("/")
                 .and()
                 .exceptionHandling().accessDeniedPage("/access-denied");
     }
