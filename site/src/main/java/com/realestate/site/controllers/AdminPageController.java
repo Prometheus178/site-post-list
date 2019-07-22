@@ -30,9 +30,13 @@ public class AdminPageController {
 
     @GetMapping(value = "/apartments/{id}")
     public String apartmentsPage(@PathVariable("id") Long id, Model model) {
-
-        model.addAttribute("address", addressService.findAddressById(id));
+        Apartment apartment = new Apartment();
+        Long addressId = id;
+        model.addAttribute("apartment", apartment);
+        model.addAttribute("addressId", addressId);
         model.addAttribute("listOfApartment", apartmentService.findAllApartment());
+        Address address = addressService.findAddressById(id);
+
         return "admin-pages/apartment";
     }
 
@@ -49,6 +53,7 @@ public class AdminPageController {
         Address address = new Address();
         model.addAttribute("addressAttribute", address);
         model.addAttribute("listOfAddresses", addressService.findAllAddress());
+
         return "admin-pages/index";
     }
 
@@ -59,6 +64,7 @@ public class AdminPageController {
         for (CommonsMultipartFile multipartFile : image) {
             address.setImage(multipartFile.getBytes());
         }
+
         addressService.saveAddress(address);
         return "redirect:/admin/address";
     }

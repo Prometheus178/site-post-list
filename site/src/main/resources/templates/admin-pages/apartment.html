@@ -10,40 +10,71 @@
     <li class="nav-link"><a class="collapse-item" th:href="@{'/logout'}">Выйти</a></li>
 </ul>
 
-<section class="probootstrap-section probootstrap-section-lighter">
+<div class="container">
 
     <div>
-        <label class="h3 mb-2 text-gray-800">Добавить квартиру на продажу</label>
+        <h3>Добавить квартиру на продажу</h3>
 
-        <form  th:object="${address}" th:action="@{'/admin/save-apartment/' + ${address.id}}" , method="post">
+        <form  th:object="${apartment}" th:action="@{'/admin/save-apartment/' + ${addressId}}" , method="post">
             <div>
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">floor</label>
-                    <input class="form-control" type="number" name="floor" id="floor">
+                    <label class="col-sm-2 col-form-label">Этаж</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="number" name="floor" id="floor">
+                    </div>
                 </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Количество комнат</label>
+                    <div class="col-sm-10">
+                        <input  class="form-control"type="number" name="numberOfApartment"
+                                id="numberOfApartment">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Номер квартиры</label>
+                    <div class="col-sm-10">
+                        <input  class="form-control"type="number" name="numberOfRooms" id="numberOfRooms">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Площадь</label>
+                    <div class="col-sm-10">
+                        <input  class="form-control"type="number" name="square" id="square">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Цена за квадрат</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="number" name="pricePerSquare"
+                               id="pricePerSquare">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Полная цена</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="number" name="fullPrice" id="fullPrice">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Статус</label>
+                    <div class="col-sm-10">
+                        <select name="status" id="status">
+                            <option value="" selected disabled hidden>Выберите статус</option>
 
-
-                <a>numberOfApartment</a><input  class="form-control"type="number" name="numberOfApartment"
-                                               id="numberOfApartment"><br/>
-                <a>numberOfRooms</a> <input  class="form-control"type="number" name="numberOfRooms" id="numberOfRooms"><br/>
-                <a>square</a> <input  class="form-control"type="number" name="square" id="square"><br/>
-                <a>pricePerSquare</a> <input class="form-control" type="number" name="pricePerSquare"
-                                             id="pricePerSquare"><br/>
-                <a>fullPrice</a> <input class="form-control" type="number" name="fullPrice" id="fullPrice">
-                <a>status</a>
-                <select name="status" id="status">
-                    <option value="" selected disabled hidden>Выберите статус</option>
-                    <option th:each="status : ${T(com.new_buildings.entities.Status).values()}"
-                            th:value="${status}"
-                            th:text="${status.getValue()}">
-                    </option>
-                </select>
+                            <option th:each="status : ${T(com.realestate.site.models.new_building.Status).values()}"
+                                    th:value="${status}"
+                                    th:text="${status.getValue()}">
+                            </option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <input type="submit" value="Save"/>
-            <input type="reset" value="Reset"/>
+            <input type="submit" value="Сохранить"/>
+            <input type="reset" value="Сброс"/>
         </form>
     </div>
-</section>
+
+</div>
 
 
 </body>
