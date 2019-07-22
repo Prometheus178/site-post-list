@@ -2,27 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/head :: head"></head>
-<div th:replace="fragments/header :: header"></div>
+
 <body id="page-top">
 
+<ul class="nav justify-content-center">
+    <li class="nav-link"><a class="collapse-item" th:href="@{/admin/address}">Добавить адрес</a></li>
+    <li class="nav-link"><a class="collapse-item" th:href="@{'/logout'}">Выйти</a></li>
+</ul>
 
-<!-- Page Heading -->
 <section class="probootstrap-section probootstrap-section-lighter">
 
     <div>
         <label class="h3 mb-2 text-gray-800">Добавить квартиру на продажу</label>
 
-        <form th:object="${address}" th:action="@{'/admin/save-apartment/' + ${address.id}}" , method="post">
+        <form  th:object="${address}" th:action="@{'/admin/save-apartment/' + ${address.id}}" , method="post">
             <div>
-                <!--<a>image</a> <input type="file" name="image" id="image"><br/>-->
-                <a>floor</a> <input type="number" name="floor" id="floor"><br/>
-                <a>numberOfApartment</a><input type="number" name="numberOfApartment"
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">floor</label>
+                    <input class="form-control" type="number" name="floor" id="floor">
+                </div>
+
+
+                <a>numberOfApartment</a><input  class="form-control"type="number" name="numberOfApartment"
                                                id="numberOfApartment"><br/>
-                <a>numberOfRooms</a> <input type="number" name="numberOfRooms" id="numberOfRooms"><br/>
-                <a>square</a> <input type="number" name="square" id="square"><br/>
-                <a>pricePerSquare</a> <input type="number" name="pricePerSquare"
+                <a>numberOfRooms</a> <input  class="form-control"type="number" name="numberOfRooms" id="numberOfRooms"><br/>
+                <a>square</a> <input  class="form-control"type="number" name="square" id="square"><br/>
+                <a>pricePerSquare</a> <input class="form-control" type="number" name="pricePerSquare"
                                              id="pricePerSquare"><br/>
-                <a>fullPrice</a> <input type="number" name="fullPrice" id="fullPrice">
+                <a>fullPrice</a> <input class="form-control" type="number" name="fullPrice" id="fullPrice">
                 <a>status</a>
                 <select name="status" id="status">
                     <option value="" selected disabled hidden>Выберите статус</option>

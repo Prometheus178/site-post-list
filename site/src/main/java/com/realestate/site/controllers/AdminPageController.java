@@ -6,6 +6,7 @@ import com.realestate.site.models.new_building.Address;
 import com.realestate.site.models.new_building.Apartment;
 import com.realestate.site.services.new_building.interfaces.AddressService;
 import com.realestate.site.services.new_building.interfaces.ApartmentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,34 +21,26 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 @RequestMapping(value = "/admin")
 public class AdminPageController {
 
+    @Autowired
     private ApartmentService apartmentService;
+    @Autowired
     private AddressService addressService;
 
 
-//    public AdminPageController(ApartmentService apartmentService, AddressServiceImpl addressService) {
-//        this.apartmentService = apartmentService;
-//        this.addressService = addressService;
-//    }
-
-
-    @GetMapping("/admin-page")
-    public String adminPanel() {
-        return "admin-pages/index";
-    }
 
     @GetMapping(value = "/apartments/{id}")
     public String apartmentsPage(@PathVariable("id") Long id, Model model) {
 
-//        model.addAttribute("address", addressService.findById(id));
-//        model.addAttribute("listOfApartment", apartmentService.findAll());
+        model.addAttribute("address", addressService.findAddressById(id));
+        model.addAttribute("listOfApartment", apartmentService.findAllApartment());
         return "admin-pages/apartment";
     }
 
     @PostMapping(value = "/save-apartment/{id}")
     public String saveOrUpdateApartment(@PathVariable("id") Long id, @ModelAttribute Apartment apartment) {
-//        Address address = addressService.findById(id);
-//        apartment.setAddress(address);
-//        apartmentService.save(apartment);
+        Address address = addressService.findAddressById(id);
+        apartment.setAddress(address);
+        apartmentService.saveApartment(apartment);
         return "redirect:/admin/address";
     }
 
@@ -55,8 +48,8 @@ public class AdminPageController {
     public String addressesPage(Model model) {
         Address address = new Address();
         model.addAttribute("addressAttribute", address);
-//        model.addAttribute("listOfAddresses", addressService.findAll());
-        return "admin-pages/address";
+        model.addAttribute("listOfAddresses", addressService.findAllAddress());
+        return "admin-pages/index";
     }
 
     @PostMapping(value = "/save-address")
@@ -66,7 +59,7 @@ public class AdminPageController {
         for (CommonsMultipartFile multipartFile : image) {
             address.setImage(multipartFile.getBytes());
         }
-//        addressService.save(address);
+        addressService.saveAddress(address);
         return "redirect:/admin/address";
     }
 

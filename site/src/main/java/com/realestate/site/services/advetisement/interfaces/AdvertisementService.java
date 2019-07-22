@@ -10,5 +10,8 @@ public interface AdvertisementService {
     List<Advertisement> findAllAdvertisementByDateTime();
 
     List<Advertisement> findAllAdvertisementByDealType(DealType dealType);
-
+    Advertisement findById(Long id);
+    void deleteById(Long id);
+    Advertisement save(Advertisement advertisement);
+    Advertisement updateById(Long id);
 }

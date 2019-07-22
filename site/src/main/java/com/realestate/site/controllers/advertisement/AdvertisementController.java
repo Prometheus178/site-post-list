@@ -19,8 +19,8 @@ import java.time.LocalDateTime;
 public class AdvertisementController {
 
 
-//    private AdvertisementServiceTEST advertisementService;
-//
+//    private AdvertisementService advertisementService;
+
 //    public AdvertisementController(AdvertisementServiceTEST advertisementService) {
 //        this.advertisementService = advertisementService;
 //    }

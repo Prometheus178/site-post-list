@@ -25,4 +25,24 @@ public class AdvertisementServiceImpl implements AdvertisementService {
         return advertisementRepository.findAllByDealType(dealType);
     }
 
+    @Override
+    public Advertisement findById(Long id) {
+        return advertisementRepository.getOne(id);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        advertisementRepository.deleteById(id);
+    }
+
+    @Override
+    public Advertisement save(Advertisement advertisement) {
+        return null;
+    }
+
+    @Override
+    public Advertisement updateById(Long id) {
+        return null;
+    }
+
 }
