@@ -1,7 +1,7 @@
-package com.realestate.site.controllers.advertisement;
+package com.realestate.site.controllers.post;
 
 
-import com.realestate.site.models.advertisement.Advertisement;
+import com.realestate.site.models.post.Post;
 //import com.realestate.site.advertisements.services.AdvertisementService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 
 
 @Controller
-public class AdvertisementController {
+public class PostController {
 
 
 //    private AdvertisementService advertisementService;
@@ -25,36 +25,35 @@ public class AdvertisementController {
 //        this.advertisementService = advertisementService;
 //    }
 
-    @GetMapping("/add-advertisement")
-    public String addAdvertisementPage(Model model) {
-        Advertisement advertisement = new Advertisement();
-        model.addAttribute("advertisementAttribute",advertisement);
-        return "add_advertisement";
+    @GetMapping("/add-post")
+    public String addPostPage(Model model) {
+        Post post = new Post();
+        model.addAttribute("postAttribute", post);
+        return "add_post";
     }
 
-    @PostMapping(value = "/save-advertisement")
-    public String saveOrUpdateAdvertisement(@ModelAttribute("advertisementAttribute") Advertisement advertisement,
-                                            BindingResult bindingResult,
-                                            @RequestParam("image") CommonsMultipartFile[] image ){
+    @PostMapping(value = "/save-post")
+    public String saveOrUpdatePost(@ModelAttribute("postAttribute") Post post,
+                                   @RequestParam("image") CommonsMultipartFile[] image, BindingResult bindingResult) {
         for (CommonsMultipartFile multipartFile : image) {
-            advertisement.setPhoto(multipartFile.getBytes());
+            post.setPhoto(multipartFile.getBytes());
         }
-        advertisement.setDateTime(LocalDateTime.now());
-//        advertisementService.save(advertisement);
+        post.setDateTime(LocalDateTime.now());
+//        advertisementService.save(post);
         return "redirect:/";
     }
 
-    @GetMapping("/advertisement/{id}")
-    public String advertisementPage(@PathVariable("id") Long id, Model model) {
-//        Advertisement advertisement = advertisementService.findById(id);
+    @GetMapping("/post/{id}")
+    public String postPage(@PathVariable("id") Long id, Model model) {
+//        Post advertisement = advertisementService.findById(id);
 //        model.addAttribute("advertisement", advertisement);
-        return "advertisement";
+        return "post";
     }
 
 
-    @GetMapping("/advertisement/{id}/advertisement-image")
+    @GetMapping("/post/{id}/post-image")
     public void showImageFromDB(@PathVariable("id") Long id, HttpServletResponse response) throws IOException {
-//        Advertisement advertisement = advertisementService.findById(id);
+//        Post advertisement = advertisementService.findById(id);
         ServletOutputStream outputStream = response.getOutputStream();
         try {
             response.setContentType("image/jpeg");

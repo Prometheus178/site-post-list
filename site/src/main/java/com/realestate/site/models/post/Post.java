@@ -1,10 +1,10 @@
-package com.realestate.site.models.advertisement;
+package com.realestate.site.models.post;
 
 
 
 
 
-import com.realestate.site.models.advertisement.enums.*;
+import com.realestate.site.models.post.enums.*;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,11 +13,11 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "advertisements")
-public class Advertisement{
+@Table(name = "posts")
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "advertisement_id")
+    @Column(name = "posts_id")
     private Long id;
     //todo 1 add String washer
     //todo 2 correct design add advertisement

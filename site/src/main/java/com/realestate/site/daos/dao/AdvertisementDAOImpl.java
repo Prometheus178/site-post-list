@@ -1,7 +1,7 @@
 //package com.realestate.site.daos.dao;
 //
 //
-//import com.realestate.site.models.advertisements.entities.Advertisement;
+//import com.realestate.site.models.advertisements.entities.Post;
 //import org.hibernate.Session;
 //import org.hibernate.SessionFactory;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -22,45 +22,45 @@
 //    }
 //
 //    @Transactional
-//    public List<Advertisement> findAll() {
+//    public List<Post> findAll() {
 //        Session session =  this.sessionFactory.getCurrentSession();
-//        List<Advertisement> advertisements = session.createNativeQuery("select * from advertisements order by date_time desc ",Advertisement.class).list();
+//        List<Post> advertisements = session.createNativeQuery("select * from advertisements order by date_time desc ",Post.class).list();
 //        return advertisements;
 //    }
 //
 //
-//    public Advertisement findById(Long aLong) {
+//    public Post findById(Long aLong) {
 //        Session session = this.sessionFactory.openSession();
 //        session.beginTransaction();
-//        Advertisement advertisement = session.load(Advertisement.class, aLong);
+//        Post advertisement = session.load(Post.class, aLong);
 //        session.getTransaction().commit();
 //        return advertisement;
 //    }
 //
 //    @Transactional
-//    public Advertisement save(Advertisement object) {
+//    public Post save(Post object) {
 //        Session session = this.sessionFactory.getCurrentSession();
 //        session.save(object);
 //        return object;
 //    }
 //
 //    @Transactional
-//    public void delete(Advertisement object) {
+//    public void delete(Post object) {
 //
 //    }
 //
 //
 //    @Transactional
-//    public List<Advertisement> findAllSell() {
+//    public List<Post> findAllSell() {
 //        Session session = this.sessionFactory.getCurrentSession();
-//        List<Advertisement> advertisements = session.createNativeQuery("select * from advertisements where deal_type='SELL' order by date_time desc ",Advertisement.class).list();
+//        List<Post> advertisements = session.createNativeQuery("select * from advertisements where deal_type='SELL' order by date_time desc ",Post.class).list();
 //        return advertisements;
 //    }
 //
 //    @Transactional
-//    public List<Advertisement> findAllRent() {
+//    public List<Post> findAllRent() {
 //        Session session = this.sessionFactory.getCurrentSession();
-//        List<Advertisement> advertisements = session.createNativeQuery("select * from advertisements where deal_type='RENT' order by date_time desc",Advertisement.class).list();
+//        List<Post> advertisements = session.createNativeQuery("select * from advertisements where deal_type='RENT' order by date_time desc",Post.class).list();
 //        return advertisements;
 //    }
 //}

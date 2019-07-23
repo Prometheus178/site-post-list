@@ -6,13 +6,13 @@
 
 
 <div>
-    <form method="POST" th:object="${advertisementAttribute}" action="/save-advertisement" enctype="multipart/form-data">
+    <form method="POST" th:object="${postAttribute}" action="/save-post" enctype="multipart/form-data">
         <div>
             <!--<div class="form-group">-->
 
                 <!--<label>Тип аккаунта</label>-->
                 <!--<select name="accountType" id="accountType">-->
-                    <!--<option th:each="accountType: ${T(com.realestate.site.models.advertisements.entities.enums.AccountType).values()}"-->
+                    <!--<option th:each="accountType: ${T(com.realestate.site.models.post.enums.AccountType).values()}"-->
                             <!--th:value="${accountType.name}"-->
                             <!--th:text="${accountType.getValue()}">-->
                     <!--</option>-->
@@ -22,7 +22,7 @@
                 <!--<label>Тип сделки</label>-->
 
                 <!--<select name="dealType" id="dealType">-->
-                    <!--<option th:each="dealType : ${T(com.realestate.site.models.advertisements.entities.enums.DealType).getValue()}"-->
+                    <!--<option th:each="dealType : ${T(com.realestate.site.models.post.enums.DealType).getValue()}"-->
                             <!--th:value="${dealType}"-->
                             <!--th:text="${dealType}">-->
                     <!--</option>-->
@@ -33,7 +33,7 @@
             <!--<div class="form-group">-->
                 <!--<label>Тип аренды</label>-->
                 <!--<select name="rentType" id="rentType">-->
-                    <!--<option th:each="rentType : ${T(com.realestate.site.models.advertisements.entities.enums.RentType).getValue()}"-->
+                    <!--<option th:each="rentType : ${T(com.realestate.site.models.post.enums.RentType).getValue()}"-->
                             <!--th:value="${rentType}"-->
                             <!--th:text="${rentType}">-->
 
@@ -45,7 +45,7 @@
             <!--<div class="form-group">-->
                 <!--<label>Тип помещения</label>-->
                 <!--<select name="realEstateType" id="realEstateType">-->
-                    <!--<option th:each="realEstateType : ${T(com.realestate.site.models.advertisements.entities.enums.RealEstateType).getValue()}"-->
+                    <!--<option th:each="realEstateType : ${T(com.realestate.site.models.post.enums.RealEstateType).getValue()}"-->
                             <!--th:value="${realEstateType}"-->
                             <!--th:text="${realEstateType}">-->
                     <!--</option>-->
@@ -56,7 +56,7 @@
             <!--<div class="form-group">-->
                 <!--<label>Жилая</label>-->
                 <!--<select name="living" id="living">-->
-                    <!--<option th:each="living : ${T(com.realestate.site.models.advertisements.entities.enums.Living).getValue()}"-->
+                    <!--<option th:each="living : ${T(com.realestate.site.models.post.enums.Living).getValue()}"-->
                             <!--th:value="${living}"-->
                             <!--th:text="${living}">-->
                     <!--</option>-->
@@ -66,7 +66,7 @@
             <!--<div class="form-group">-->
                 <!--<label>Коммерческая</label>-->
                 <!--<select name="commercial" id="commercial">-->
-                    <!--<option th:each="commercial : ${T(com.realestate.site.models.advertisements.entities.enums.Commercial).getValue()}"-->
+                    <!--<option th:each="commercial : ${T(com.realestate.site.models.post.enums.Commercial).getValue()}"-->
                             <!--th:value="${commercial}"-->
                             <!--th:text="${commercial}">-->
                     <!--</option>-->
@@ -77,7 +77,7 @@
             <!--<div class="form-group">-->
                 <!--<label>Район</label>-->
                 <!--<select name="district" id="district">-->
-                    <!--<option th:each="district : ${T(com.realestate.site.models.advertisements.entities.enums.District).getValue()}"-->
+                    <!--<option th:each="district : ${T(com.realestate.site.models.post.enums.District).getValue()}"-->
                             <!--th:value="${district}"-->
                             <!--th:text="${district}">-->
                     <!--</option>-->
@@ -91,7 +91,7 @@
             <!--<div class="form-group">-->
                 <!--<label>Тип жилья</label>-->
                 <!--<select name="buildingType" id="buildingType">-->
-                    <!--<option th:each="buildingType : ${T(com.realestate.site.models.advertisements.entities.enums.BuildingType).getValue()}"-->
+                    <!--<option th:each="buildingType : ${T(com.realestate.site.models.post.enums.BuildingType).getValue()}"-->
                             <!--th:value="${buildingType}"-->
                             <!--th:text="${buildingType}">-->
                     <!--</option>-->
@@ -129,7 +129,7 @@
                 <!--<div class="form-group">-->
                     <!--<label>Число комнат</label>-->
                     <!--<select name="numberOfRooms" id="numberOfRooms">-->
-                        <!--<option th:each="numberOfRooms : ${T(com.realestate.site.models.advertisements.entities.enums.NumberOfRooms).getValue()}"-->
+                        <!--<option th:each="numberOfRooms : ${T(com.realestate.site.models.post.enums.NumberOfRooms).getValue()}"-->
                                 <!--th:value="${numberOfRooms}"-->
                                 <!--th:text="${numberOfRooms}">-->
                         <!--</option>-->
@@ -159,7 +159,7 @@
             <!--<div class="form-group">-->
                 <!--<label>Ремонт</label>-->
                 <!--<select name="repairs" id="repairs">-->
-                    <!--<option th:each="repairs : ${T(com.realestate.site.models.advertisements.entities.enums.Repairs).getValue()}"-->
+                    <!--<option th:each="repairs : ${T(com.realestate.site.models.post.enums.Repairs).getValue()}"-->
                             <!--th:value="${repairs}"-->
                             <!--th:text="${repairs}">-->
                     <!--</option>-->

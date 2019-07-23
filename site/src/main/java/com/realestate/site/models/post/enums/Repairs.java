@@ -1,4 +1,4 @@
-package com.realestate.site.models.advertisement.enums;
+package com.realestate.site.models.post.enums;
 
 public enum Repairs {
     NONE("-"),

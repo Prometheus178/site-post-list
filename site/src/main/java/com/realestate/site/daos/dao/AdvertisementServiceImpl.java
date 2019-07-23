@@ -1,7 +1,7 @@
 //package com.realestate.site.advertisements.services;
 //
 //import com.realestate.site.daos.dao.AdvertisementDAO;
-//import com.realestate.site.models.advertisements.entities.Advertisement;
+//import com.realestate.site.models.advertisements.entities.Post;
 //import org.springframework.data.domain.Page;
 //import org.springframework.data.domain.PageImpl;
 //import org.springframework.data.domain.PageRequest;
@@ -22,31 +22,31 @@
 //    }
 //
 //    @Override
-//    public List<Advertisement> findAll() {
+//    public List<Post> findAll() {
 //        return advertisementDAO.findAll();
 //    }
 //    @Override
-//    public Advertisement findById(Long aLong) {
+//    public Post findById(Long aLong) {
 //        return advertisementDAO.findById(aLong);
 //    }
 //
 //    @Override
-//    public Advertisement save(Advertisement object) {
+//    public Post save(Post object) {
 //        advertisementDAO.save(object);
 //        return object;
 //    }
 //
 //    @Override
-//    public void delete(Advertisement object) {
+//    public void delete(Post object) {
 //        advertisementDAO.delete(object);
 //    }
 //
 //    @Override
-//    public Page<Advertisement> findPaginated(Pageable pageable) {
+//    public Page<Post> findPaginated(Pageable pageable) {
 //        int pageSize = pageable.getPageSize();
 //        int currentPage = pageable.getPageNumber();
 //        int startItem = currentPage * pageSize;
-//        List<Advertisement> list;
+//        List<Post> list;
 //        int sizeOfListAdvertisement = advertisementDAO.findAll().size();
 //        if (sizeOfListAdvertisement < startItem){
 //            list = Collections.emptyList();
@@ -54,18 +54,18 @@
 //            int toIndex = Math.min(startItem + pageSize, sizeOfListAdvertisement);
 //            list = advertisementDAO.findAll().subList(startItem, toIndex);
 //        }
-//        Page<Advertisement> advertisementPage = new PageImpl<Advertisement>(list, PageRequest.of(currentPage,pageSize), sizeOfListAdvertisement);
+//        Page<Post> advertisementPage = new PageImpl<Post>(list, PageRequest.of(currentPage,pageSize), sizeOfListAdvertisement);
 //        return advertisementPage;
 //
 //    }
 //
 //    @Override
-//    public List<Advertisement> findAllSell() {
+//    public List<Post> findAllSell() {
 //        return advertisementDAO.findAllSell();
 //    }
 //
 //    @Override
-//    public List<Advertisement> findAllRent() {
+//    public List<Post> findAllRent() {
 //        return advertisementDAO.findAllRent();
 //    }
 //}

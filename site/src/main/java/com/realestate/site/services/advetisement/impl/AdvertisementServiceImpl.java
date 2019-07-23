@@ -1,8 +1,8 @@
 package com.realestate.site.services.advetisement.impl;
 
-import com.realestate.site.models.advertisement.Advertisement;
-import com.realestate.site.models.advertisement.enums.DealType;
-import com.realestate.site.repositories.advertisement.AdvertisementRepository;
+import com.realestate.site.models.post.Post;
+import com.realestate.site.models.post.enums.DealType;
+import com.realestate.site.repositories.post.PostRepository;
 import com.realestate.site.services.advetisement.interfaces.AdvertisementService;
 import org.springframework.stereotype.Service;
 
@@ -11,37 +11,37 @@ import java.util.List;
 @Service
 public class AdvertisementServiceImpl implements AdvertisementService {
 
-    private AdvertisementRepository advertisementRepository;
+    private PostRepository postRepository;
 
-    public AdvertisementServiceImpl(AdvertisementRepository advertisementRepository) {
-        this.advertisementRepository = advertisementRepository;
+    public AdvertisementServiceImpl(PostRepository postRepository) {
+        this.postRepository = postRepository;
     }
     @Override
-    public List<Advertisement> findAllAdvertisementByDateTime(){
-        return advertisementRepository.findAll();
+    public List<Post> findAllAdvertisementByDateTime(){
+        return postRepository.findAll();
     }
     @Override
-    public List<Advertisement> findAllAdvertisementByDealType(DealType dealType){
-        return advertisementRepository.findAllByDealType(dealType);
+    public List<Post> findAllAdvertisementByDealType(DealType dealType){
+        return postRepository.findAllByDealType(dealType);
     }
 
     @Override
-    public Advertisement findById(Long id) {
-        return advertisementRepository.getOne(id);
+    public Post findById(Long id) {
+        return postRepository.getOne(id);
     }
 
     @Override
     public void deleteById(Long id) {
-        advertisementRepository.deleteById(id);
+        postRepository.deleteById(id);
     }
 
     @Override
-    public Advertisement save(Advertisement advertisement) {
+    public Post save(Post post) {
         return null;
     }
 
     @Override
-    public Advertisement updateById(Long id) {
+    public Post updateById(Long id) {
         return null;
     }
 
