@@ -4,36 +4,32 @@
 <body>
 <div th:replace="fragments/header :: header"></div>
 
-<section class="probootstrap-section probootstrap-section-lighter">
-    <div>
-        <div th:if="${not #lists.isEmpty(listOfAddress)}">
-            <div class="container">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th> Адрес</th>
-                        <th> Квартиры</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="address : ${listOfAddress}">
-                        <td th:text="${address.address}">address</td>
-                        <td><a th:href="@{'/address/' + ${address.id} + '/apartment'}">список квартир</a></td>
-                        <td>
-                            <div class="col-md-6">
-                            <img src="/resources/img/slider_4.jpg"
-                                 th:src="@{'/address/' + ${address.id} + '/address-image'}"
-                                 width="200" height="200">
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+<div class="card shadow mb-4" th:if="${not #lists.isEmpty(listOfAddress)}">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+        <tr>
+            <th> Адрес</th>
+            <th> Квартиры</th>
+            <th> Объект</th>
 
-        </div>
-    </div>
-</section>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="address : ${listOfAddress}">
+            <td th:text="${address.address}">address</td>
+            <td><a th:href="@{'/address/' + ${address.id} + '/apartment'}">список квартир</a></td>
+            <td>
+                <div class="col-md-6">
+                    <img src="/resources/img/slider_4.jpg"
+                         th:src="@{'/address/' + ${address.id} + '/address-image'}"
+                         width="200" height="200">
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
 <div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

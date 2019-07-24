@@ -12,12 +12,12 @@
 //import java.util.List;
 //
 //@Service
-//public class AdvertisementServiceImpl implements AdvertisementService {
+//public class PostServiceImpl implements PostService {
 //
 //
 //    private AdvertisementDAO advertisementDAO;
 //
-//    public AdvertisementServiceImpl(AdvertisementDAO advertisementDAO) {
+//    public PostServiceImpl(AdvertisementDAO advertisementDAO) {
 //        this.advertisementDAO = advertisementDAO;
 //    }
 //

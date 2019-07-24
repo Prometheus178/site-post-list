@@ -1,7 +1,7 @@
 /* BASIC */
 
 html {
-    background-color: #56baed;
+    background-color: #ffffff;
 }
 
 body {
@@ -56,7 +56,7 @@ h2 {
 
 #formFooter {
     background-color: #f6f6f6;
-    border-top: 1px solid #dce8f1;
+    border-top: 1px solid #ffffff;
     padding: 25px;
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
@@ -137,7 +137,7 @@ input[type=text] {
 
 input[type=text]:focus {
     background-color: #fff;
-    border-bottom: 2px solid #5fbae9;
+    border-bottom: 2px solid #ffffff;
 }
 
 input[type=text]:placeholder {
@@ -235,7 +235,7 @@ input[type=text]:placeholder {
     bottom: -10px;
     width: 0;
     height: 2px;
-    background-color: #56baed;
+    background-color: #ffffff;
     content: "";
     transition: width 0.2s;
 }

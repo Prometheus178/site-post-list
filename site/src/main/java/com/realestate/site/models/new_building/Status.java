@@ -6,14 +6,14 @@ public enum Status {
     AVAILABLE("Свободно"),
     RESERVED("Зарезервировано");
 
-    private String value;
+    private String displayName;
 
     Status(String val) {
-        this.value = val;
+        this.displayName = val;
     }
 
-    public String getValue() {
-        return value;
+    public String getDisplayName() {
+        return displayName;
     }
 
 

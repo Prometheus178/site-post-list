@@ -1,27 +1,27 @@
-package com.realestate.site.services.advetisement.impl;
+package com.realestate.site.services.post.impl;
 
 import com.realestate.site.models.post.Post;
 import com.realestate.site.models.post.enums.DealType;
 import com.realestate.site.repositories.post.PostRepository;
-import com.realestate.site.services.advetisement.interfaces.AdvertisementService;
+import com.realestate.site.services.post.interfaces.PostService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class AdvertisementServiceImpl implements AdvertisementService {
+public class PostServiceImpl implements PostService {
 
     private PostRepository postRepository;
 
-    public AdvertisementServiceImpl(PostRepository postRepository) {
+    public PostServiceImpl(PostRepository postRepository) {
         this.postRepository = postRepository;
     }
     @Override
-    public List<Post> findAllAdvertisementByDateTime(){
+    public List<Post> findAllPost(){
         return postRepository.findAll();
     }
     @Override
-    public List<Post> findAllAdvertisementByDealType(DealType dealType){
+    public List<Post> findAllPostByDealType(DealType dealType){
         return postRepository.findAllByDealType(dealType);
     }
 
@@ -31,18 +31,15 @@ public class AdvertisementServiceImpl implements AdvertisementService {
     }
 
     @Override
-    public void deleteById(Long id) {
-        postRepository.deleteById(id);
+    public void delete(Post post) {
+        postRepository.delete(post);
     }
 
     @Override
     public Post save(Post post) {
-        return null;
+        return postRepository.save(post);
     }
 
-    @Override
-    public Post updateById(Long id) {
-        return null;
-    }
+
 
 }

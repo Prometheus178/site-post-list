@@ -1,11 +1,13 @@
-//package com.realestate.site.services.user.interfaces;
-//
-//
-//import com.realestate.site.daos.dao.CrudService;
-//import com.realestate.site.models.users.entities.Customer;
-//
-//public interface CustomerService extends CrudService<Customer, Long> {
-//
-//    void sendEmail(Customer customer);
-//
-//}
+package com.realestate.site.services.user.interfaces;
+
+
+import com.realestate.site.models.user.Customer;
+
+import java.util.List;
+
+public interface CustomerService {
+
+    void sendEmail(Customer customer);
+    Customer saveCustomer(Customer customer);
+    List<Customer> findAllCustomer();
+}

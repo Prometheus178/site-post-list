@@ -32,16 +32,12 @@ public class NewBuildingController {
 
     @GetMapping(value = "/address/{id}/apartment")
     public String apartmentPage(@PathVariable("id")  Long id, Model model){
-        model.addAttribute("listOfApartment", apartmentService.findAllApartmentById(id));
+        model.addAttribute("listOfApartment", apartmentService.findAllApartmentByAddressId(id));
 
         return "new_building_apartment";
     }
 
-    @GetMapping("/apartment/{id}/order")
-    public String orderPage(@PathVariable("id")  Long id, Model model){
-        model.addAttribute("apartment", apartmentService.findApartmentById(id));
-        return "new_building_order";
-    }
+
 
     @GetMapping("/address/{id}/address-image")
     public void renderImageFromDB(@PathVariable("id")  Long id, HttpServletResponse response) throws IOException {

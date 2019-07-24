@@ -8,7 +8,8 @@ import java.util.Optional;
 
 public interface ApartmentRepository extends JpaRepository<Apartment,Long> {
 
-    Optional<Apartment> findById(Long id);
-    List<Apartment> findAllById(Long id);
+
+    List<Apartment> findAllApartmentByAddress_Id(Long id);
+
 
 }

@@ -5,9 +5,12 @@ package com.realestate.site.models.post;
 
 
 import com.realestate.site.models.post.enums.*;
+import com.realestate.site.models.user.User;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 
@@ -19,8 +22,12 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "posts_id")
     private Long id;
-    //todo 1 add String washer
-    //todo 2 correct design add advertisement
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
+    @NotNull
+    private User user;
+    //todo 1 add String numberOfRoom
     @Column(name = "title")
     private String title;
     @Column(name = "date_time")
@@ -132,6 +139,10 @@ public class Post {
     private boolean lift;
     @Column(name = "ramp")
     private boolean ramp;
+
+
+
+
 
 
 }

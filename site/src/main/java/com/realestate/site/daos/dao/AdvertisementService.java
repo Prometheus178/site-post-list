@@ -9,7 +9,7 @@
 //import java.util.List;
 //
 //
-//public interface AdvertisementService extends CrudService<Post, Long> {
+//public interface PostService extends CrudService<Post, Long> {
 //
 //    Page<Post> findPaginated(Pageable pageable);
 //    List<Post> findAllSell();

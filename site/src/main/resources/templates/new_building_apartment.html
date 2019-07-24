@@ -4,43 +4,40 @@
 <body>
 <div th:replace="fragments/header :: header"></div>
 
-<section class="probootstrap-section probootstrap-section-lighter">
-    <div>
-        <div th:if="${not #lists.isEmpty(listOfApartment)}">
-            <div class="container">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th> Hомер квартиры</th>
-                        <th> Этаж</th>
-                        <th> Количество комнат</th>
-                        <th> Площадь</th>
-                        <th> Цена за метр</th>
-                        <th> Полная цена</th>
-                        <th> Статус</th>
-                        <th> Заявка</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="apartment : ${listOfApartment}">
-                        <td th:text="${apartment.numberOfApartment}"></td>
-                        <td th:text="${apartment.floor}"></td>
-                        <td th:text="${apartment.numberOfRooms}"></td>
-                        <td th:text="${apartment.square}"></td>
-                        <td th:text="${apartment.pricePerSquare}"></td>
-                        <td th:text="${apartment.fullPrice}"></td>
-                        <td th:text="${apartment.status.getValue()}"></td>
-                        <div th:switch="${apartment.status}">
-                            <td th:case="${apartment.status.AVAILABLE}"> <a th:href="@{'/apartment/' + ${apartment.id} + '/order'}">Заявка на осмотр</a></td>
-                        </div>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
 
-        </div>
-    </div>
-</section>
+<div class="card shadow mb-4" id="dataTable" width="100%" th:if="${not #lists.isEmpty(listOfApartment)}">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th> Hомер квартиры</th>
+            <th> Этаж</th>
+            <th> Количество комнат</th>
+            <th> Площадь</th>
+            <th> Цена за метр</th>
+            <th> Полная цена</th>
+            <th> Статус</th>
+            <th> Заявка</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="apartmentlist : ${listOfApartment}">
+            <td th:text="${apartmentlist.numberOfApartment}"></td>
+            <td th:text="${apartmentlist.floor}"></td>
+            <td th:text="${apartmentlist.numberOfRooms}"></td>
+            <td th:text="${apartmentlist.square}"></td>
+            <td th:text="${apartmentlist.pricePerSquare}"></td>
+            <td th:text="${apartmentlist.fullPrice}"></td>
+            <td th:text="${apartmentlist.status}"></td>
+            <div th:if="${apartmentlist.status} eq ${T(com.realestate.site.models.new_building.Status).AVAILABLE}">
+                <td><a th:href="@{'/apartment/' + ${apartmentlist.id} + '/order'}">Заявка на осмотр</a></td>
+            </div>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
 <div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

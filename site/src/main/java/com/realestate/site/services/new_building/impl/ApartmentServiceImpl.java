@@ -15,10 +15,6 @@ public class ApartmentServiceImpl implements ApartmentService {
     @Autowired
     private ApartmentRepository apartmentRepository;
 
-    @Override
-    public List<Apartment> findAllApartment() {
-        return apartmentRepository.findAll();
-    }
 
     @Override
     public Apartment findApartmentById(Long id) {
@@ -31,12 +27,12 @@ public class ApartmentServiceImpl implements ApartmentService {
     }
 
     @Override
-    public void deleteApartment(Long id) {
+    public void deleteApartmentById(Long id) {
         apartmentRepository.deleteById(id);
     }
 
     @Override
-    public List<Apartment> findAllApartmentById(long id) {
-        return apartmentRepository.findAllById(id);
+    public List<Apartment> findAllApartmentByAddressId(long id) {
+        return apartmentRepository.findAllApartmentByAddress_Id(id);
     }
 }

@@ -8,10 +8,9 @@ import java.util.Optional;
 
 public interface ApartmentService{
 
-    List<Apartment> findAllApartment();
     Apartment findApartmentById(Long id);
     Apartment saveApartment(Apartment apartment);
-    void deleteApartment(Long id);
-    List<Apartment> findAllApartmentById(long id);
+    void deleteApartmentById(Long id);
+    List<Apartment> findAllApartmentByAddressId(long id);
 
 }
