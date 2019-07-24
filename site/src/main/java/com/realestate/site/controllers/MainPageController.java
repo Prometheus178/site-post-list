@@ -3,6 +3,7 @@ package com.realestate.site.controllers;
 
 
 //import com.realestate.site.advertisements.services.PostService;
+import com.realestate.site.models.post.enums.DealType;
 import com.realestate.site.services.post.interfaces.PostService;
 import com.realestate.site.services.user.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,17 +25,18 @@ public class MainPageController {
         return "main";
     }
 
-    //    @GetMapping("/main/all-sell")
-//    public String findAllSell(Model model) {
-//        model.addAttribute("listOfAdvertisementByStatusSell", advertisementService.findAllSell());
-//        return "main";
-//    }
-//
-//    @GetMapping("/main/all-rent")
-//    public String findAllRent(Model model) {
-//        model.addAttribute("listOfAdvertisementByStatusRent", advertisementService.findAllRent());
-//        return "main";
-//    }
+        @GetMapping("/main/all-sell")
+    public String findAllSell(Model model) {
+
+        model.addAttribute("listOfPostByStatusSell", postService.findAllPostByDealType(DealType.SELL));
+        return "main";
+    }
+
+    @GetMapping("/main/all-rent")
+    public String findAllRent(Model model) {
+        model.addAttribute("listOfPostByStatusRent", postService.findAllPostByDealType(DealType.RENT));
+        return "main";
+    }
 
 
    

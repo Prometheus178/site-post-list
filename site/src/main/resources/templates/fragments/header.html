@@ -6,7 +6,8 @@
 <body>
 <header th:fragment="header" role="banner" class="probootstrap-header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
-        <span class="navbar-brand mb-0 h1">ЦАН</span>
+        <a class="navbar-brand">
+            <img th:src="@{/img/home.png}" alt="home"/></a>
 
         <div class="collapse navbar-collapse justify-content-center " id="navbarNav">
             <ul class="navbar-nav">
@@ -25,10 +26,13 @@
                 <li class="nav-item" sec:authorize="isAuthenticated()">
                     <a class="nav-link" th:href="@{'/logout'}" >Выйти</a>
                 </li>
-                <li sec:authorize="hasRole('USER')">
-                    <span class="nav-link" th:text="${#authentication.getName()}"></span>
-                </li>
+
             </ul>
+
+                <a class="nav-item" sec:authorize="isAuthenticated()" th:href="@{/user/profile}">
+                    <span class="nav-link" th:text="${#authentication.getName()}"></span>
+                </a>
+
         </div>
 
 
@@ -36,10 +40,10 @@
     <br/>
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link" th:href="@{'/all-rent'}">Аренда</a>
+            <a class="nav-link" th:href="@{'/main/all-rent'}">Аренда</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" th:href="@{'/all-sell'}">Продажа</a>
+            <a class="nav-link" th:href="@{'/main/all-sell'}">Продажа</a>
         </li>
     </ul>
     <br/>

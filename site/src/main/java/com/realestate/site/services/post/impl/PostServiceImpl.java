@@ -2,6 +2,7 @@ package com.realestate.site.services.post.impl;
 
 import com.realestate.site.models.post.Post;
 import com.realestate.site.models.post.enums.DealType;
+import com.realestate.site.models.user.User;
 import com.realestate.site.repositories.post.PostRepository;
 import com.realestate.site.services.post.interfaces.PostService;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,12 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public void delete(Post post) {
+    public List<Post> findAllByUser(User user) {
+        return postRepository.findAllByUser(user);
+    }
+
+    @Override
+    public void deletePost(Post post){
         postRepository.delete(post);
     }
 

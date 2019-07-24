@@ -15,45 +15,40 @@
             <!-- Grid column -->
             <div class="col-md-4 mx-auto">
 
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4" th:text="${}"></h5>
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4" th:text="#{contacts}"></h5>
                 <p>
-                    <a> Адрес: г. Якутск, ул. Кирова 18, блок В, офис 203 и 303б
-                    </a>
-                    <a> E-mail: can-ykt@mail.ru</a>
-                    <a> Тел: 8 (4112) 219-618
-                    </a>
-
-                <p>
-
+                <h6 th:text="#{contact_address}"></h6>
+                <h6 th:text="#{contact_email}"></h6>
+                <h6 th:text="#{contact_phone}"></h6>
                 </p>
 
             </div>
             <!-- Grid column -->
-
             <hr class="clearfix w-100 d-md-none">
 
             <!-- Grid column -->
             <div class="col-md-2 mx-auto">
-
                 <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Cсылки</h5>
-
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4" th:text="#{links}"></h5>
                 <ul class="list-unstyled">
-
-                    <a href="https://www.instagram.com/can14ykt/">Instagram</a>
-
+                    <a href="https://www.instagram.com/can14ykt/">
+                        <img th:src="@{/img/instagram.png}" alt="instagram"/></a>
                 </ul>
-
             </div>
-            <!-- Grid column -->
-
-
         </div>
-        <!-- Grid row -->
-
     </div>
-
-
+    <hr/>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" th:text="#{rigths}"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/main/privacy}" th:text="#{privacy}"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/main/terms}" th:text="#{terms}"></a>
+        </li>
+    </ul>
 
 
 </footer>

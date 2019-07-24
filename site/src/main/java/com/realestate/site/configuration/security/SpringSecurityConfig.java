@@ -51,7 +51,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/main/**", "/address/**", "/apartment/**", "/advertisement/**").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/registration").permitAll()
-                .antMatchers("/add-post", "/save-post").hasAnyAuthority("USER","ADMIN").anyRequest().authenticated()
+                .antMatchers("/add-post", "/save-post","/user/profile","/post-delete").hasAnyAuthority("USER","ADMIN").anyRequest().authenticated()
                 .antMatchers("/admin/**").hasAnyAuthority("ADMIN").anyRequest().authenticated()
                 .and().csrf().disable()
 

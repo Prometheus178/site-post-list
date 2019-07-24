@@ -9,17 +9,223 @@
     <div th:object="${post}" class="card">
         <img class="card-img-top" src="..." alt="Card image cap"
              th:src="@{'/post/' + ${post.id} + '/post-image'}">
-        <div class="card-body">
-            <div class="card-header">
-                <p th:text="${post.title}"></p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item" th:text="${post.description}">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item"><h3 th:text="${post.price}"></h3></li>
-                <li class="list-group-item"><h3 th:text="${post.dateTime}"></h3></li>
-            </ul>
+        <div class="card-header justify-content-center">
+            <p th:text="${post.title}"></p>
         </div>
+        <ul class="card-body">
+            <li class="list-group-item" >
+
+                <label>Тип аккаунта</label>
+                <p th:text="*{accountType.getValue()}" name="accountType">
+
+                </p>
+            </li>
+            <li class="list-group-item" id="">
+                <label>Тип сделки</label>
+
+                <p th:text="*{dealType.getValue()}" name="dealType">
+
+                </p>
+
+            </li>
+
+            <li class="list-group-item" >
+                <label>Тип аренды</label>
+                <p th:text="*{rentType.getValue()}" name="rentType">
+
+                </p>
+            </li>
+
+
+            <div class="list-group-item" >
+                <label>Тип помещения</label>
+                <p th:text="*{realEstateType.getValue()}" name="realEstateType">
+
+                </p>
+            </div>
+
+
+            <!--<li class="list-group-item">-->
+            <!--<label>Жилая</label>-->
+            <!--<p th:text="*{living.getValue()}" name="living" >-->
+
+            <!--</li>-->
+
+            <!--<li class="list-group-item">-->
+            <!--<label>Коммерческая</label>-->
+            <!--<p th:text="*{commercial.getValue()}" name="commercial" >-->
+            <!--</p>-->
+            <!--</li>-->
+
+
+            <li class="list-group-item" >
+                <label>Район</label>
+                <p th:text="*{district.getValue()}" name="district">
+
+                </p>
+            </li>
+            <li class="list-group-item" >
+                <label>Адрес</label>
+                <p th:text="*{address}" type="text" name="address">
+            </li>
+
+            <li class="list-group-item" >
+                <label>Тип жилья</label>
+                <p th:text="*{buildingType.getValue()}" name="buildingType">
+
+                </p>
+            </li>
+
+            <!--<li class="list-group-item" id="numberOfRooms">-->
+            <!--<label>Количество комнат</label>-->
+            <!--&lt;!&ndash;<p th:field="*{numberOfRooms.getValue()}" name="numberOfRooms">&ndash;&gt;-->
+
+            <!--&lt;!&ndash;</p>&ndash;&gt;-->
+            <!--</li>-->
+
+
+            <li class="list-group-item">
+                <label>Описание</label>
+                <p th:text="*{description}" type="text" name="description">
+            </li>
+
+            <li class="list-group-item">
+                <label>Цена</label>
+                <p th:text="*{price}" type="number" name="price">
+            </li>
+
+            <li class="list-group-item">
+                <label>Депозит</label>
+                <p th:text="*{deposit}" type="number" name="deposit">
+            </li>
+
+            <li class="list-group-item">
+                <label>Коммунальные включены</label>
+                <p th:text="*{communalPayments}" type="checkbox" name="communalPayments">
+            </li>
+
+
+            <li class="list-group-item">
+                <label>Площадь</label>
+                <p th:text="*{square}" type="number" name="square">
+            </li>
+
+            <li class="list-group-item">
+                <label>Жилая площадь</label>
+                <p th:text="*{squareOfLiving}" type="number" name="squareOfLiving" >
+            </li>
+
+            <li class="list-group-item">
+                <label>Площадь кухни</label>
+                <p th:text="*{squareOfKitchen}" type="number" name="squareOfKitchen">
+            </li>
+
+            <li class="list-group-item">
+                <label>Этаж</label>
+                <p th:text="*{floor}" type="number" name="floor" >
+            </li>
+
+            <li class="list-group-item">
+                <label>Ремонт</label>
+                <p th:text="*{repairs.getValue()}" name="repairs" >
+
+                </p>
+            </li>
+
+            <li class="list-group-item" >
+                <p th:text="*{animal}" type="checkbox" name="">
+                    <label class="">животные </label>
+            </li>
+            <li class=" list-group-item">
+                <p th:text="*{furniture}" type="checkbox" name="furniture" class="">
+                    <label class=""> мебель </label>
+            </li>
+            <li class="list-group-item" >
+                <p th:text="*{balcony}" type="checkbox" name="balcony" class="">
+                    <label class=""> балкон </label>
+            </li>
+
+
+            <li class="list-group-item ">
+                <p th:text="*{windowInside}" type="checkbox" name="" class="">
+                    <label class="custom-control-label"> окно внутрь </label>
+            </li>
+            <li class="list-group-item" >
+                <p th:text="*{windowOutside}" type="checkbox" name=""
+                   class="custom-control-input">
+                    <label class="custom-control-label"> окно наружу </label>
+            </li>
+            <li class="list-group-item" >
+                <p th:text="*{loggia}" type="checkbox" name="loggia" class="">
+                    <label class="custom-control-label"> лоджия </label>
+            </li>
+
+
+            <li class="list-group-item" >
+                <p th:text="*{tv}" type="checkbox" name="tv" class="">
+                    <label class="custom-control-label"> телевизор </label>
+            </li>
+            <li class="list-group-item" >
+                <p th:text="*{phone}" type="checkbox" name="phone" class="">
+                    <label class="custom-control-label"> телефон </label>
+            </li>
+            <li class="list-group-item" >
+                <p th:text="*{bath}" type="checkbox" name="bath" class="">
+                    <label class="custom-control-label"> ванна </label>
+            </li>
+
+
+            <li class="list-group-item" >
+                <p th:text="*{shower}" type="checkbox" name="shower" class="">
+                    <label class="custom-control-label"> душ </label>
+            </li>
+            <li class="list-group-item" >
+                <p input th:text="*{conditioner}" type="checkbox" name="conditioner"
+                   class="custom-control-input">
+                    <label class="custom-control-label"> кондиционер </label>
+            </li>
+            <li class="list-group-item" >
+                <p th:text="*{internet}" type="checkbox" name="internet" class="custom-control-input">
+                    <label class="custom-control-label"> интернет </label>
+            </li>
+
+
+            <li class="list-group-item" >
+                <p th:text="*{separateBathroom}" type="checkbox" name="separateBathroom"
+                   class="custom-control-input">
+                    <label class="custom-control-label"> раздельный санузел </label>
+            </li>
+            <li class="list-group-item" >
+                <p th:text="*{combinedBathroom}" type="checkbox" name="combinedBathroom"
+                   class="custom-control-input">
+                    <label class="custom-control-label"> совмещенный санузел </label>
+            </li>
+            <li class="list-group-item" >
+                <p th:text="*{lift}" type="checkbox" name="lift" class="custom-control-input">
+                    <label class="custom-control-label"> лифт </label>
+            </li>
+
+
+            <li class="list-group-item" >
+                <p th:text="*{ramp}" type="checkbox" name="ramp" class="custom-control-input">
+                    <label class="custom-control-label"> трап </label>
+            </li>
+
+            <li class="list-group-item">
+                <label>Название комплекса</label>
+                <p th:text="*{nameOfComplex}" type="text" name="nameOfComplex" id="nameOfComplex">
+            </li>
+            <li class="list-group-item">
+                <label>Год постройки</label>
+                <p th:text="*{yearOfConstruction}" type="number" name="yearOfConstruction" id="yearOfConstruction">
+            </li>
+            <li class="list-group-item">
+                <label>Пользователь</label>
+                <p th:text="*{user.id}" type="number" name="" >
+            </li>
+            <div class="card-footer text-muted" th:text="*{dateTime}">
+            </div>
+        </ul>
     </div>
 </div>
 

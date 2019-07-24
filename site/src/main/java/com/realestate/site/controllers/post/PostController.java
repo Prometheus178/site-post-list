@@ -60,8 +60,8 @@ public class PostController {
 
     @GetMapping("/post/{id}")
     public String postPage(@PathVariable("id") Long id, Model model) {
-        Post advertisement = postService.findById(id);
-        model.addAttribute("advertisement", advertisement);
+        Post post = postService.findById(id);
+        model.addAttribute("post", post);
         return "post";
     }
 
@@ -81,6 +81,13 @@ public class PostController {
         }
 
 
+    }
+
+    @PostMapping("/post-delete/{id}")
+    public String postDelete(@PathVariable("id") Long id) {
+        Post post = postService.findById(id);
+        postService.deletePost(post);
+        return "redirect:/user/profile";
     }
 
 

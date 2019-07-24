@@ -1,7 +1,6 @@
 package com.realestate.site.controllers.user;
 
 
-import com.realestate.site.models.new_building.Apartment;
 import com.realestate.site.models.user.Customer;
 
 import com.realestate.site.services.new_building.interfaces.ApartmentService;

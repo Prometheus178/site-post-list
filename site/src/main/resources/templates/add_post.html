@@ -104,6 +104,16 @@
                 </select>
             </div>
 
+            <div class="form-group" id="numberOfRooms">
+                <label>Количество комнат</label>
+                <select th:field="*{numberOfRooms}" name="numberOfRooms" class="custom-select">
+                    <option th:each="numberOfRooms : ${T(com.realestate.site.models.post.enums.NumberOfRooms).values()}"
+                            th:value="${numberOfRooms}"
+                            th:text="${numberOfRooms.getValue()}">
+                    </option>
+                </select>
+            </div>
+
 
             <div class="form-group" id="description">
                 <label>Описание</label>
@@ -163,81 +173,81 @@
             </div>
             <div class="form-row">
                 <div class="custom-control custom-checkbox col-4"  id="animal">
-                    <input th:field="*{animal}" type="checkbox" name="animal" class="custom-control-input" >
-                    <label class="custom-control-label" >животные </label>
+                    <input th:field="*{animal}" type="checkbox" name="animal" id="customCheck1" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck1" >животные </label>
                 </div>
                 <div class="custom-control custom-checkbox col-4" id="furniture">
-                    <input  th:field="*{furniture}" type="checkbox" name="furniture"  class="custom-control-input" >
-                    <label class="custom-control-label" > мебель </label>
+                    <input  th:field="*{furniture}" type="checkbox" name="furniture" id="customCheck2"   class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck2" > мебель </label>
                 </div>
                 <div class="custom-control custom-checkbox col-4" id="balcony">
-                    <input  th:field="*{balcony}" type="checkbox" name="balcony"  class="custom-control-input" >
-                    <label class="custom-control-label" > балкон </label>
+                    <input  th:field="*{balcony}" type="checkbox" name="balcony" id="customCheck3"  class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck3"> балкон </label>
                 </div>
             </div>
             <div class="form-row">
                 <div class="custom-control custom-checkbox col-4" id="windowInside">
-                    <input  th:field="*{windowInside}" type="checkbox" name="windowInside"  class="custom-control-input" >
-                    <label class="custom-control-label" > окно внутрь </label>
+                    <input  th:field="*{windowInside}" type="checkbox" name="windowInside"  id="customCheck4" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck4"> окно внутрь </label>
                 </div>
                 <div class="custom-control custom-checkbox col-4" id="windowOutside">
-                    <input th:field="*{windowOutside}" type="checkbox" name="windowOutside" class="custom-control-input" >
-                    <label class="custom-control-label" > окно наружу </label>
+                    <input th:field="*{windowOutside}" type="checkbox" name="windowOutside" id="customCheck5" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck5"> окно наружу </label>
                 </div>
                 <div class="custom-control custom-checkbox col-4" id="loggia">
-                    <input  th:field="*{loggia}" type="checkbox" name="loggia"  class="custom-control-input" >
-                    <label class="custom-control-label" > лоджия </label>
+                    <input  th:field="*{loggia}" type="checkbox" name="loggia" id="customCheck6" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck6"> лоджия </label>
                 </div>
             </div>
             <div class="form-row">
                 <div class="custom-control custom-checkbox col-4" id="tv">
-                    <input input th:field="*{tv}" type="checkbox" name="tv"  class="custom-control-input" >
-                    <label class="custom-control-label" > телевизор </label>
+                    <input input th:field="*{tv}" type="checkbox" name="tv" id="customCheck7" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck7"> телевизор </label>
                 </div>
                 <div class="custom-control custom-checkbox col-4" id="phone">
-                    <input th:field="*{phone}" type="checkbox" name="phone"  class="custom-control-input" >
-                    <label class="custom-control-label" > телефон </label>
+                    <input th:field="*{phone}" type="checkbox" name="phone" id="customCheck8" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck8"> телефон </label>
                 </div>
                 <div class="custom-control custom-checkbox col-4" id="bath">
-                    <input  th:field="*{bath}" type="checkbox" name="bath" class="custom-control-input" >
-                    <label class="custom-control-label" > ванна </label>
+                    <input  th:field="*{bath}" type="checkbox" name="bath" id="customCheck9" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck9"> ванна </label>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="custom-control custom-checkbox col-4" id="shower">
-                    <input th:field="*{shower}" type="checkbox" name="shower" class="custom-control-input" >
-                    <label class="custom-control-label" > душ </label>
+                    <input th:field="*{shower}" type="checkbox" name="shower" id="customCheck10" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck10"> душ </label>
                 </div>
                 <div class="custom-control custom-checkbox col-4" id="conditioner">
-                    <input input th:field="*{conditioner}" type="checkbox" name="conditioner"  class="custom-control-input" >
-                    <label class="custom-control-label" > кондиционер </label>
+                    <input input th:field="*{conditioner}" type="checkbox" name="conditioner" id="customCheck11" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck11"> кондиционер </label>
                 </div>
                 <div class="custom-control custom-checkbox col-4" id="internet">
-                    <input  th:field="*{internet}" type="checkbox" name="internet" class="custom-control-input" >
-                    <label class="custom-control-label" > интернет </label>
+                    <input  th:field="*{internet}" type="checkbox" name="internet" id="customCheck12" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck12"> интернет </label>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="custom-control custom-checkbox col-4" id="separateBathroom">
-                    <input input th:field="*{separateBathroom}" type="checkbox" name="separateBathroom" class="custom-control-input" >
-                    <label class="custom-control-label" >  раздельный санузел </label>
+                    <input input th:field="*{separateBathroom}" type="checkbox" name="separateBathroom" id="customCheck13" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck13">  раздельный санузел </label>
                 </div>
                 <div class="custom-control custom-checkbox col-4" id="combinedBathroom">
-                    <input th:field="*{combinedBathroom}" type="checkbox" name="combinedBathroom" class="custom-control-input" >
-                    <label class="custom-control-label" > совмещенный санузел </label>
+                    <input th:field="*{combinedBathroom}" type="checkbox" name="combinedBathroom" id="customCheck14" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck14"> совмещенный санузел </label>
                 </div>
                 <div class="custom-control custom-checkbox col-4" id="lift">
-                    <input  input th:field="*{lift}" type="checkbox" name="lift" class="custom-control-input" >
-                    <label class="custom-control-label" > лифт </label>
+                    <input  input th:field="*{lift}" type="checkbox" name="lift" id="customCheck15" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck15"> лифт </label>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="custom-control custom-checkbox col-4" id="ramp">
-                    <input th:field="*{ramp}" type="checkbox" name="ramp" class="custom-control-input" >
-                    <label class="custom-control-label" > трап </label>
+                    <input th:field="*{ramp}" type="checkbox" name="ramp" id="customCheck16" class="custom-control-input" >
+                    <label class="custom-control-label" for="customCheck16" > трап </label>
                 </div>
 
             </div>
