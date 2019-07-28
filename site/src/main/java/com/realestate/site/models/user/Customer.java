@@ -2,10 +2,12 @@ package com.realestate.site.models.user;
 
 
 import com.realestate.site.models.new_building.Apartment;
+import com.realestate.site.utils.FormatDateTime;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @Data
@@ -19,7 +21,7 @@ public class Customer {
     @Column(name = "username")
     private String username;
     @Column(name = "date_time")
-    private LocalDateTime dateTime;
+    private String dateTime;
     @Column(name = "phone_number")
     private String phoneNumber;
 
@@ -38,4 +40,22 @@ public class Customer {
     @JoinColumn(name = "apartment_id")
     private Apartment apartment;
 
+    public String getDateTime() {
+        return FormatDateTime.getInstance().formattedDateTime(dateTime);
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", dateTime='" + dateTime + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", comment='" + comment + '\'' +
+                ", mortgage=" + mortgage +
+                ", agreeToDataProcessing=" + agreeToDataProcessing +
+                ", apartment=" + apartment.getAddress() +
+                '}';
+    }
 }

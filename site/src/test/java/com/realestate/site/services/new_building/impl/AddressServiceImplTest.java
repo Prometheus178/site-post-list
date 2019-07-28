@@ -7,43 +7,43 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class AddressServiceImplTest {
-
-    private AddressRepository addressRepository;
-
-
-
-    private AddressServiceImpl addressService;
-    private Address address;
-
-    public AddressServiceImplTest() {
-    }
-
-    @Before
-    public void setUp() {
-
-
-
-
-    }
-
-    @Test
-    public void findAllAddress() {
-    }
-
-    @Test
-    public void findAddressById() {
-    }
-
-    @Test
-    public void saveAddress() {
-        address = new Address();
-        address.setId(1L);
-        address.setAddress("test");
-        addressRepository.save(address);
-    }
-
-    @Test
-    public void deleteAddress() {
-    }
-}
+//public class AddressServiceImplTest {
+//
+//    private AddressRepository addressRepository;
+//
+//
+//
+//    private AddressServiceImpl addressService;
+//    private Address address;
+//
+//    public AddressServiceImplTest() {
+//    }
+//
+//    @Before
+//    public void setUp() {
+//
+//
+//
+//
+//    }
+//
+//    @Test
+//    public void findAllAddress() {
+//    }
+//
+//    @Test
+//    public void findAddressById() {
+//    }
+//
+//    @Test
+//    public void saveAddress() {
+//        address = new Address();
+//        address.setId(1L);
+//        address.setAddress("test");
+//        addressRepository.save(address);
+//    }
+//
+//    @Test
+//    public void deleteAddress() {
+//    }
+//}

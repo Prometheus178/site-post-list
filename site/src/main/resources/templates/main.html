@@ -38,8 +38,7 @@
                                class="btn btn-primary" th:text="#{detail}"></a>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted" th:text="${post.dateTime}">Last updated 3 mins ago
-                            </small>
+                            <small class="text-muted" th:text="${post.dateTime}"></small>
                         </div>
                     </div>
                     <br/>
@@ -68,7 +67,7 @@
                                class="btn btn-primary">Подробнее</a>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted" th:text="${post.dateTime}">Last updated 3 mins ago
+                            <small class="text-muted" th:text="${post.getFormatDateTime()}">Last updated 3 mins ago
                             </small>
                         </div>
                     </div>

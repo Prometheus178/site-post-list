@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.security.Principal;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 
 @Controller
@@ -53,7 +52,8 @@ public class PostController {
         for (CommonsMultipartFile multipartFile : file) {
             post.setPhoto(multipartFile.getBytes());
         }
-        post.setDateTime(LocalDateTime.now());
+
+        post.setDateTime(LocalDateTime.now().toString());
         postService.save(post);
         return "redirect:/";
     }

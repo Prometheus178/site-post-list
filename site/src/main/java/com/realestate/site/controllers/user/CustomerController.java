@@ -34,7 +34,7 @@ public class CustomerController {
     @PostMapping("/order/visit/{id}")
     public String toOrderAnApartment(@PathVariable("id")Long id, @ModelAttribute Customer customer, Model model) {
         customer.setApartment(apartmentService.findApartmentById(id));
-        customer.setDateTime(LocalDateTime.now());
+        customer.setDateTime(LocalDateTime.now().toString());
         customerService.saveCustomer(customer);
         customerService.sendEmail(customer);
         model.addAttribute("successMessage", "Спасибо за обращение наши сотрудники с вами свяжутся в ближайщее время");

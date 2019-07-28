@@ -6,12 +6,14 @@ package com.realestate.site.models.post;
 
 import com.realestate.site.models.post.enums.*;
 import com.realestate.site.models.user.User;
+import com.realestate.site.utils.FormatDateTime;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @Data
@@ -31,7 +33,7 @@ public class Post {
     @Column(name = "title")
     private String title;
     @Column(name = "date_time")
-    private LocalDateTime dateTime;
+    private String dateTime;
     @Column(name = "account_type")
     private AccountType accountType;
     @Column(name = "deal_type")
@@ -140,9 +142,8 @@ public class Post {
     @Column(name = "ramp")
     private boolean ramp;
 
-
-
-
-
-
+    public String getDateTime() {
+//        return dateTime;
+        return FormatDateTime.getInstance().formattedDateTime(dateTime);
+    }
 }
