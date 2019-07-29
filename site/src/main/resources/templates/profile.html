@@ -17,7 +17,6 @@
                     <div class="card text-center">
                         <div>
                             <img class="card-img-top" alt="Card image"
-                                 src="/../../img/nophoto-available.png"
                                  th:src="@{'/post/' + ${post.id} + '/post-image'}">
                         </div>
                         <div class="card-body">
@@ -53,16 +52,7 @@
         </div>
     </div>
 
-    <!--Pagination-->
 
-    <!--<div class="row" th:if="${advertisementPage.totalPages > 0}"-->
-    <!--th:each="pageNumber : ${pageNumbers}">-->
-    <!--<div>-->
-    <!--<a th:href="@{/main(size=${advertisementPage.size}, page=${pageNumber})}"-->
-    <!--th:text="${pageNumber}"-->
-    <!--th:class="${pageNumber==advertisementPage.number + 1} ? active"></a>-->
-    <!--</div>-->
-    <!--</div>-->
 </div>
 <div th:replace="fragments/footer :: footer"></div>
 

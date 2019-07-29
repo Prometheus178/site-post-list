@@ -6,10 +6,8 @@
 
 <body id="page-top">
 
-<ul class="nav justify-content-center">
-    <li class="nav-link"><a class="collapse-item" th:href="@{/admin/address}">Добавить адрес</a></li>
-    <li class="nav-link"><a class="collapse-item" th:href="@{'/logout'}">Выйти</a></li>
-</ul>
+<div th:replace="/fragments/admin-header :: admin-header"/>
+
 
 <div class="container">
     <div class="card shadow mb-4" th:if="${not #lists.isEmpty(listOfCustomer)}">

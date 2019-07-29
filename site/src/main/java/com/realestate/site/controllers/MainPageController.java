@@ -1,40 +1,29 @@
 package com.realestate.site.controllers;
 
-import com.realestate.site.models.post.enums.DealType;
+import com.realestate.site.models.post.Post;
 import com.realestate.site.services.post.interfaces.PostService;
-import com.realestate.site.services.user.interfaces.UserService;
+import com.realestate.site.utils.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainPageController {
 
     @Autowired
     private PostService postService;
-    @Autowired
-    private UserService userService;
 
     @GetMapping({"/","/main"})
-    public String main(Model model){
-        model.addAttribute("listOfPost" ,postService.findAllPost());
+    public String main(@RequestParam(defaultValue = "0") int page,Model model){
+
+        Page<Post> posts = postService.findAllOrderedByDatePageable(page);
+        Pager pager = new Pager(posts);
+        model.addAttribute("pager" , pager );
+
         return "main";
     }
 
-        @GetMapping("/main/all-sell")
-    public String findAllSell(Model model) {
-
-        model.addAttribute("listOfPostByStatusSell", postService.findAllPostByDealType(DealType.SELL));
-        return "main";
-    }
-
-    @GetMapping("/main/all-rent")
-    public String findAllRent(Model model) {
-        model.addAttribute("listOfPostByStatusRent", postService.findAllPostByDealType(DealType.RENT));
-        return "main";
-    }
-
-
-   
 }

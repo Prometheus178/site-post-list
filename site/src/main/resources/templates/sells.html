@@ -5,15 +5,14 @@
 <div th:replace="fragments/header :: header"></div>
 
 <div class="container">
-    <blockquote class="blockquote text-center">
-        <p class="mb-0" th:text="#{posts}"></p>
-    </blockquote>
+
+    <div th:replace="/fragments/links :: links"/>
 
     <!--Posts-->
     <div class="row">
         <div>
             <div class="card-deck">
-                <div class="col-3" th:each="post : ${listOfPostByStatusSell}">
+                <div class="col-3" th:each="post : ${pager.posts}">
                     <div class="card text-center">
                         <div>
                             <img class="card-img-top" src="" alt="Card image cap"
@@ -45,6 +44,8 @@
             </div>
         </div>
     </div>
+
+    <div th:replace="/fragments/pagination :: pagination(URLparameter='/main/all-sell')"/>
 
 
 </div>

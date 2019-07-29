@@ -3,10 +3,8 @@
 
 <head th:replace="fragments/head :: head"></head>
 <body>
-<ul class="nav justify-content-center">
-    <li class="nav-link"><a class="collapse-item" th:href="@{/admin/customers}">Клиенты</a></li>
-    <li class="nav-link"><a class="collapse-item" th:href="@{'/logout'}">Выйти</a></li>
-</ul>
+<div th:replace="/fragments/admin-header :: admin-header"/>
+
 <div class="container">
 
     <div>
