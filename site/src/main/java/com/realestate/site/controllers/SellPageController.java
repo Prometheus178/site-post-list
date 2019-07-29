@@ -9,31 +9,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class MainPageController {
+public class SellPageController {
 
     @Autowired
     private PostService postService;
     @Autowired
     private UserService userService;
 
-    @GetMapping({"/","/main"})
-    public String main(Model model){
-        model.addAttribute("listOfPost" ,postService.findAllPost());
-        return "main";
-    }
 
-        @GetMapping("/main/all-sell")
+    @GetMapping("/main/all-sell")
     public String findAllSell(Model model) {
 
         model.addAttribute("listOfPostByStatusSell", postService.findAllPostByDealType(DealType.SELL));
-        return "main";
+        return "sell";
     }
 
-    @GetMapping("/main/all-rent")
-    public String findAllRent(Model model) {
-        model.addAttribute("listOfPostByStatusRent", postService.findAllPostByDealType(DealType.RENT));
-        return "main";
-    }
+
 
 
    

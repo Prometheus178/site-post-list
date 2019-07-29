@@ -26,10 +26,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     private String usersQuery;
     @Value("${spring.queries.roles-query}")
     private String rolesQuery;
-    @Value("${spring.admin.username}")
-    private String username;
-    @Value("${spring.admin.password}")
-    private String password;
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -38,8 +34,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .usersByUsernameQuery(usersQuery)
                 .authoritiesByUsernameQuery(rolesQuery)
                 .dataSource(dataSource);
-//        in memory;
-//        auth.inMemoryAuthentication().withUser(username).password(password).roles("ADMIN");
+
 
     }
 
@@ -68,6 +63,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/")
                 .and()
                 .exceptionHandling().accessDeniedPage("/access-denied");
+
     }
 
     @Override

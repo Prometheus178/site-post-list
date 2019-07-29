@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container">
+    <blockquote class="blockquote text-center">
+        <p class="mb-0" th:text="#{posts}"></p>
+    </blockquote>
+
+    <!--Posts-->
+    <div class="row">
+        <div>
+            <div class="card-deck">
+                <div class="col-3" th:each="post : ${listOfPostByStatusRent}">
+                    <div class="card text-center">
+                        <div>
+                            <img class="card-img-top" src="" alt="Card image cap"
+                                 th:src="@{'/post/' + ${post.id} + '/post-image'}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${post.title}">Card title</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6 class="card-subtitle mb-2 text-muted" th:text="${post.district.getValue()}">Card
+                                    subtitle</h6>
+                            </li>
+                            <li class="list-group-item">
+                                <h6 class="card-subtitle mb-2 text-muted" th:text="${post.price}">Card
+                                    subtitle</h6>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <a th:href="@{'/post/' + ${post.id}}"
+                               class="btn btn-primary">Подробнее</a>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted" th:text="${post.dateTime}">Last updated 3 mins ago
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>

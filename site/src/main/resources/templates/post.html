@@ -8,7 +8,7 @@
 <div class="container">
     <div th:object="${post}" class="card">
         <img class="card-img-top" src="..." alt="Card image cap"
-             th:src="@{'/post/' + ${post.id} + '/post-image'}">
+             th:src="@{'/post/' + ${post.id} + '/post-image'}" onerror="this.onerror=null; this.src='/../../img/no-image.png'">
         <div class="card-header justify-content-center">
             <p th:text="${post.title}"></p>
         </div>
