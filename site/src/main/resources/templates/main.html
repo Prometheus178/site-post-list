@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head th:replace="fragments/head :: head"></head>
 <body>
 <div th:replace="fragments/header :: header"></div>
@@ -7,13 +10,13 @@
 <div class="container">
 
     <!--links-->
-    <div th:replace="/fragments/links :: links"/>
+    <div th:replace="fragments/links :: links"/>
 
     <!--Posts-->
-    <div th:replace="/fragments/posts :: posts"/>
+    <div th:replace="fragments/posts :: posts"/>
 
     <!--pagination-->
-    <div th:replace="/fragments/pagination :: pagination(URLparameter='/main')"/>
+    <div th:replace="fragments/pagination :: pagination(URLparameter='/main')"/>
 
 </div>
 

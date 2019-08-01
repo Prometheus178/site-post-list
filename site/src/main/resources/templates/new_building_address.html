@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/head :: head"></head>
 <body>
 <div th:replace="fragments/header :: header"></div>
 
 <div class="card shadow mb-4" th:if="${not #lists.isEmpty(listOfAddress)}">
-    <table class="table table-bordered" id="dataTable" width="90%" cellspacing="0">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
         <tr>
             <th> Адрес</th>

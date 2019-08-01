@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/head :: head"></head>
 <body>
 <div th:replace="fragments/header :: header"></div>
 
 <div class="container">
 
-    <div th:replace="/fragments/links :: links"/>
+    <div th:replace="fragments/links :: links"/>
 
     <!--Posts-->
     <div class="row">
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <div th:replace="/fragments/pagination :: pagination(URLparameter='/main/all-sell')"/>
+    <div th:replace="fragments/pagination :: pagination(URLparameter='/main/all-sell')"/>
 
 
 </div>

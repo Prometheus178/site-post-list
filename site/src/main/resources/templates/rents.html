@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/head :: head"></head>
 <body>
 <div th:replace="fragments/header :: header"></div>
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div th:replace="/fragments/pagination :: pagination(URLparameter='/main/all-rent')"/>
+    <div th:replace="fragments/pagination :: pagination(URLparameter='/main/all-rent')"/>
 
 </div>
 

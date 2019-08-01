@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head th:replace="fragments/head :: head"></head>
 <body>
@@ -16,6 +19,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{'/address'}">Новостройки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://calculator-credit.ru/calculator.php">Калькулятор</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{'/add-post'}">Добавить объявление</a>
@@ -39,9 +45,13 @@
 
 
     </nav>
-
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
 </header>
+
 </body>
 
 
