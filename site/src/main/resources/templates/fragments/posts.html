@@ -8,7 +8,7 @@
         <div>
             <div class="card-deck">
                 <div class="col-3" th:each="post : ${pager.posts}">
-                    <div class="card text-center">
+                    <div class="card text-center" style="width: 18rem;">
                         <div>
                             <img class="card-img-top"  alt="Card image"
                                  th:src="@{'/post/' + ${post.id} + '/post-image'}" onerror="this.onerror=null; this.src='/../../img/no-image.png'">
