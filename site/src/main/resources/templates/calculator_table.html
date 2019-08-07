@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container">
+    <table class="table table-bordered  table-hover" >
+        <thead>
+        <tr>
+
+            <th scope="col">Дата платежа</th>
+            <th scope="col">Сумма платежа</th>
+            <th scope="col">Основной платеж</th>
+            <th scope="col">Проценты</th>
+            <th scope="col">Остаток кредита</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="payment : ${payments}">
+
+            <td th:text="${payment.getDate()}"></td>
+            <td th:text="${payment.getAnnuityPayment()}"></td>
+            <td th:text="${payment.getPaymentLoan()}"></td>
+            <td th:text="${payment.getPaymentRate()}"></td>
+            <td th:text="${payment.getBalanceLoan()}"></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

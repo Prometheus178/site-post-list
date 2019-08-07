@@ -1,3 +1,6 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
 h1 {
     color: #0000FF;
 }
@@ -37,15 +40,18 @@ a:hover, a:focus, a:active {
     cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
     .navbar-nav.navbar-center {
         position: absolute;
-        left: 50%;
-        transform: translatex(-50%);
+        left: 45%;
+        transform: translatex(-40%);
     }
 }
 
 .img-fluid {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
+}
+.container {
+    margin-top: 10%;
 }

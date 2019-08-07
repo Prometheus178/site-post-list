@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+
+<div class="container">
+    <div class="row ">
+        <form class="col-sm-8" th:object="${formInputAttribute}" method="post" action="/calculator/count"
+              enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Cумма кредита</label>
+                <input th:field="*{amount}" class="form-control" type="number" name="amount">
+            </div>
+            <div class="form-group">
+                <label>На срок в месяцах</label>
+                <input th:field="*{period}" class="form-control" type="number" name="period">
+            </div>
+            <div class="form-group">
+                <label>Годовая ставка</label>
+                <input th:field="*{rateInYear}" class="form-control" type="number" name="rateInYear">
+            </div>
+            <button type="submit" class="btn btn-primary">Посчитать</button>
+        </form>
+    </div>
+</div>
+
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
+

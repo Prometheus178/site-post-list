@@ -5,7 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+
 @Table(name = "addresses")
 @Entity
 public class Address {
@@ -18,4 +18,32 @@ public class Address {
     @Column(name = "image")
     private byte[] image;
 
+    public Address(String address, byte[] image) {
+        this.address = address;
+        this.image = image;
+    }
+    public Address(){}
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
 }
