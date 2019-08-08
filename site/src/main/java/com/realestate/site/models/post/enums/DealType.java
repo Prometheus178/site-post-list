@@ -1,7 +1,6 @@
 package com.realestate.site.models.post.enums;
 
 public enum DealType {
-    NONE("-"),
     SELL ("Продажа"),
     RENT ("Аренда");
     private String value;

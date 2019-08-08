@@ -1,18 +1,21 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-</head>
+<head th:replace="fragments/head :: head"></head>
 <body>
-<div th:fragment="posts">
-    <div class="container">
-        <div class="row">
+<div th:replace="fragments/header :: header"></div>
 
+<div class="container">
+    <!--     Search-->
+    <div th:replace="fragments/search :: search"/>
+
+    <div class="row">
+        <div>
             <div class="card-deck">
-                <div class="col-3" th:each="post : ${pager.posts}">
-                    <div class="card  text-center" >
+                <div class="col-3" th:each="post : ${postsSearchedByQuery}">
+                    <div class="card text-center" >
                         <div>
-                            <img class="card-img-top" alt="Card image"
-                                 th:src="@{'/post/' + ${post.id} + '/post-image'}"
-                                 onerror="this.onerror=null; this.src='/../../img/no-image.png'">
+                            <img class="card-img-top"  alt="Card image"
+                                 th:src="@{'/post/' + ${post.id} + '/post-image'}" onerror="this.onerror=null; this.src='/../../img/no-image.png'">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title" th:text="${post.title}">Card title</h5>
@@ -38,11 +41,16 @@
                     <br/>
                 </div>
             </div>
-
         </div>
     </div>
 
+<!--    <div th:replace="fragments/pagination :: pagination(URLparameter='/main/all-sell')"/>-->
+
 
 </div>
+
+
+<div th:replace="fragments/footer :: footer"></div>
+
 </body>
 </html>

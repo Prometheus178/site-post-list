@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:fragment="search">
+    <div class="container">
+        <form th:object="${post}" method="POST" action="/search" class="form-inline" enctype="multipart/form-data">
+
+            <select name="dealType" class="custom-select  col">
+
+                <option th:each="dealType : ${T(com.realestate.site.models.post.enums.DealType).values()}"
+                        th:value="${dealType}"
+                        th:text="${dealType.getValue()}">
+                </option>
+            </select>
+<!--            <select class="custom-select col" onchange="apartmentSelectHandler(this)">-->
+<!--                <optgroup label="living">-->
+<!--                    <option th:each="living : ${T(com.realestate.site.models.post.enums.Living).values()}"-->
+<!--                            th:value="${post.living}"-->
+<!--                            th:text="${living.getValue()}">-->
+<!--                    </option>-->
+<!--                </optgroup>-->
+<!--                <optgroup  label="commercial">-->
+<!--                    <option th:each="commercial : ${T(com.realestate.site.models.post.enums.Commercial).values()}"-->
+<!--                            th:value="${post.commercial}"-->
+<!--                            th:text="${commercial.getValue()}">-->
+<!--                    </option>-->
+<!--                </optgroup>-->
+<!--            </select>-->
+
+            <select name="living" class="custom-select col" onchange="apartmentSelectHandler(this)">
+                <option th:value="null">-</option>
+                <option th:each="living : ${T(com.realestate.site.models.post.enums.Living).values()}"
+                        th:value="${living}"
+                        th:text="${living.getValue()}">
+                </option>
+            </select>
+            <select name="commercial" class="custom-select col">
+                <option th:value="null">-</option>
+                <option th:each="commercial : ${T(com.realestate.site.models.post.enums.Commercial).values()}"
+                        th:value="${commercial}"
+                        th:text="${commercial.getValue()}">
+                </option>
+            </select>
+
+            <select name="numberOfRooms" class="custom-select" id="numberOfRoomsSearch">
+                <option th:each="numberOfRooms : ${T(com.realestate.site.models.post.enums.NumberOfRooms).values()}"
+                        th:value="${numberOfRooms}"
+                        th:text="${numberOfRooms.getValue()}">
+                </option>
+            </select>
+            <select name="accountType" class="custom-select">
+                <option th:each="accountType: ${T(com.realestate.site.models.post.enums.AccountType).values()}"
+                        th:value="${accountType}"
+                        th:text="${accountType.getValue()}">
+                </option>
+            </select>
+            <!--            <div class="col">-->
+            <!--                <input name="price" type="number" class="form-control" id="formGroupExampleInput" placeholder="Цена">-->
+            <!--            </div>-->
+            <button class="btn btn-primary" type="submit">Поиск</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

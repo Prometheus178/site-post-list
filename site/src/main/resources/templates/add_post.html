@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html  xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/head :: head"></head>
 <body>
 <div th:replace="fragments/header :: header"></div>
@@ -79,7 +79,6 @@
                 </select>
             </div>
 
-
             <div class="form-group" id="district">
                 <label>Район</label>
                 <select th:field="*{district}" name="district" class="custom-select">
@@ -89,8 +88,6 @@
                     </option>
                 </select>
             </div>
-
-
 
             <div class="form-group" id="address">
                 <label>Адрес</label>
@@ -117,7 +114,6 @@
                 </select>
             </div>
 
-
             <div class="form-group" id="description">
                 <label>Описание</label>
                 <input th:field="*{description}" type="text" name="description">
@@ -126,7 +122,6 @@
                 <input  th:field="*{photo}" type="file"  name="photo" class="custom-file-input" id="customFile">
                 <label class="custom-file-label" for="customFile">Выберите фото</label>
             </div>
-
 
             <div>
                 <label>Цена</label>

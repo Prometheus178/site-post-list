@@ -49,9 +49,11 @@ a:hover, a:focus, a:active {
 }
 
 .img-fluid {
-    max-width: 90%;
+    max-width: 50%;
     height: auto;
 }
 .container {
     margin-top: 10%;
+    margin-bottom: 10%;
 }
+
