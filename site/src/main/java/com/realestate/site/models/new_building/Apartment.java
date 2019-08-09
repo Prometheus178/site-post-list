@@ -36,5 +36,83 @@ public class Apartment{
     @Column(name = "status")
     private Status status;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
+
+    public int getNumberOfApartment() {
+        return numberOfApartment;
+    }
+
+    public void setNumberOfApartment(int numberOfApartment) {
+        this.numberOfApartment = numberOfApartment;
+    }
+
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+    public void setNumberOfRooms(int numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
+    }
+
+    public double getSquare() {
+        return square;
+    }
+
+    public void setSquare(double square) {
+        this.square = square;
+    }
+
+    public int getPricePerSquare() {
+        return pricePerSquare;
+    }
+
+    public void setPricePerSquare(int pricePerSquare) {
+        this.pricePerSquare = pricePerSquare;
+    }
+
+    public int getFullPrice() {
+        return fullPrice;
+    }
+
+    public void setFullPrice(int fullPrice) {
+        this.fullPrice = fullPrice;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }

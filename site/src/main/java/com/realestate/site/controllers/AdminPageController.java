@@ -2,6 +2,7 @@ package com.realestate.site.controllers;
 
 
 
+import com.realestate.site.exception.FileStorageException;
 import com.realestate.site.models.new_building.Address;
 import com.realestate.site.models.new_building.Apartment;
 import com.realestate.site.models.user.Customer;
@@ -14,9 +15,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-
+import java.io.IOException;
 
 
 @Controller
@@ -72,10 +74,14 @@ public class AdminPageController {
     @PostMapping(value = "/save-address")
     public String saveOrUpdateAddress(@ModelAttribute("addressAttribute") Address address,
                                       BindingResult bindingResult,
-                                      @RequestParam("image") CommonsMultipartFile[] image) {
-        for (CommonsMultipartFile multipartFile : image) {
-            address.setImage(multipartFile.getBytes());
+                                      @RequestParam("image") MultipartFile file) {
+        try{
+            address.setImage(file.getBytes());
+        }catch (IOException e){
+            throw new FileStorageException("Could not store file " + file + ". Please try again!", e);
         }
+
+
 
         addressService.saveAddress(address);
         return "redirect:/admin/address";

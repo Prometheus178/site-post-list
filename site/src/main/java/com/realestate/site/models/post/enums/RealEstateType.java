@@ -1,7 +1,7 @@
 package com.realestate.site.models.post.enums;
 
 public enum RealEstateType {
-    NONE("-"),
+
     LIVING ("Жилая"),
     COMMERCIAL ("Коммерческая");
 

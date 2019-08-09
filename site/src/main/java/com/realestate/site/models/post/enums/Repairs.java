@@ -1,7 +1,6 @@
 package com.realestate.site.models.post.enums;
 
 public enum Repairs {
-    NONE("-"),
     COSMETIC("Косметический"),
     EURO("Евро"),
     DESIGNER("Дизайнерский"),

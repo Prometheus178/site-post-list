@@ -5,6 +5,7 @@ import com.realestate.site.models.calculator.FormInput;
 import com.realestate.site.models.calculator.Payment;
 
 import com.realestate.site.services.calculator.PaymentService;
+import com.realestate.site.services.post.interfaces.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

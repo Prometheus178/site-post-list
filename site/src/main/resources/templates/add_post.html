@@ -7,14 +7,9 @@
 
 <div class="container">
 
-    <br/><br/><br/>
-    <!--Show this info message only if posted successfully-->
-    <!--<div class="alert alert-info" th:if="${successMessage}" th:utext="${successMessage}"></div>-->
-
     <form method="POST" th:object="${postAttribute}" action="/save-post" enctype="multipart/form-data">
-        <div>
-            <div class="form-group" id="accountType">
-
+        <div class="row">
+            <div class="form-group col" id="accountType">
                 <label>Тип аккаунта</label>
                 <select th:field="*{accountType}" name="accountType" class="custom-select">
                     <option th:each="accountType: ${T(com.realestate.site.models.post.enums.AccountType).values()}"
@@ -23,7 +18,7 @@
                     </option>
                 </select>
             </div>
-            <div class="form-group" id="dealType">
+            <div class="form-group col" id="dealType">
                 <label>Тип сделки</label>
 
                 <select th:field="*{dealType}" name="dealType" class="custom-select">
@@ -35,7 +30,7 @@
 
             </div>
 
-            <div class="form-group" id="rentType" >
+            <div class="form-group col" id="rentType" >
                 <label>Тип аренды</label>
                 <select th:field="*{rentType}" name="rentType" class="custom-select">
                     <option th:each="rentType : ${T(com.realestate.site.models.post.enums.RentType).values()}"
@@ -44,42 +39,9 @@
                     </option>
                 </select>
             </div>
-
-
-            <div class="form-group" id="realEstateType" >
-                <label>Тип помещения</label>
-                <select th:field="*{realEstateType}" name="realEstateType" class="custom-select">
-                    <option th:each="realEstateType : ${T(com.realestate.site.models.post.enums.RealEstateType).values()}"
-                            th:value="${realEstateType}"
-                            th:text="${realEstateType.getValue()}">
-                    </option>
-                </select>
-            </div>
-
-
-            <div class="form-group">
-                <label>Жилая</label>
-                <select th:field="*{living}" name="living" id="living" class="custom-select">
-
-                    <option th:each="living : ${T(com.realestate.site.models.post.enums.Living).values()}"
-                            th:value="${living}"
-                            th:text="${living.getValue()}">
-                    </option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Коммерческая</label>
-                <select th:field="*{commercial}" name="commercial" id="commercial" class="custom-select">
-
-                    <option th:each="commercial : ${T(com.realestate.site.models.post.enums.Commercial).values()}"
-                            th:value="${commercial}"
-                            th:text="${commercial.getValue()}">
-                    </option>
-                </select>
-            </div>
-
-            <div class="form-group" id="district">
+        </div>
+        <div class="row" >
+            <div class="form-group col-4 " id="district">
                 <label>Район</label>
                 <select th:field="*{district}" name="district" class="custom-select">
                     <option th:each="district : ${T(com.realestate.site.models.post.enums.District).values()}"
@@ -88,23 +50,36 @@
                     </option>
                 </select>
             </div>
-
-            <div class="form-group" id="address">
-                <label>Адрес</label>
-                <input th:field="*{address}" type="text" name="address">
-            </div>
-
-            <div class="form-group" id="buildingType">
-                <label>Тип жилья</label>
-                <select th:field="*{buildingType}" name="buildingType" class="custom-select">
-                    <option th:each="buildingType : ${T(com.realestate.site.models.post.enums.BuildingType).values()}"
-                            th:value="${buildingType}"
-                            th:text="${buildingType.getValue()}">
+            <div class="form-group col" id="realEstateType" >
+                <label>Тип помещения</label>
+                <select th:field="*{realEstateType}" name="realEstateType" class="custom-select">
+                    <option th:each="realEstateType : ${T(com.realestate.site.models.post.enums.RealEstateType).values()}"
+                            th:value="${realEstateType}"
+                            th:text="${realEstateType.getValue()}">
                     </option>
                 </select>
             </div>
-
-            <div class="form-group" id="numberOfRooms">
+            <div class="form-group col">
+                <label>Коммерческая</label>
+                <select th:field="*{commercial}" name="commercial" id="commercial" class="custom-select">
+                    <option th:each="commercial : ${T(com.realestate.site.models.post.enums.Commercial).values()}"
+                            th:value="${commercial}"
+                            th:text="${commercial.getValue()}">
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label>Жилая</label>
+                <select th:field="*{living}" name="living" id="living" class="custom-select">
+                    <option th:each="living : ${T(com.realestate.site.models.post.enums.Living).values()}"
+                            th:value="${living}"
+                            th:text="${living.getValue()}">
+                    </option>
+                </select>
+            </div>
+            <div class="form-group col" id="numberOfRooms">
                 <label>Количество комнат</label>
                 <select th:field="*{numberOfRooms}" name="numberOfRooms" class="custom-select">
                     <option th:each="numberOfRooms : ${T(com.realestate.site.models.post.enums.NumberOfRooms).values()}"
@@ -113,13 +88,32 @@
                     </option>
                 </select>
             </div>
+            <div class="form-group" id="buildingType">
+                <label>Тип дома</label>
+                <select th:field="*{buildingType}" name="buildingType" class="custom-select">
+                    <option th:each="buildingType : ${T(com.realestate.site.models.post.enums.BuildingType).values()}"
+                            th:value="${buildingType}"
+                            th:text="${buildingType.getValue()}">
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input th:field="*{address}" type="text" class="form-control" placeholder="Введите адрес" aria-label="Адрес" aria-describedby="basic-addon1">
+        </div>
 
+
+
+        <div>
             <div class="form-group" id="description">
                 <label>Описание</label>
                 <input th:field="*{description}" type="text" name="description">
             </div>
-            <div class="custom-file">
-                <input  th:field="*{photo}" type="file"  name="photo" class="custom-file-input" id="customFile">
+            <div class="multiple-upload">
+                <input  type="file" name="photo" class="form-control" id="customFile" lang="ru" multiple />
                 <label class="custom-file-label" for="customFile">Выберите фото</label>
             </div>
 
@@ -168,6 +162,7 @@
                     </option>
                 </select>
             </div>
+
             <div class="form-row">
                 <div class="custom-control custom-checkbox col-4"  id="animal">
                     <input th:field="*{animal}" type="checkbox" name="animal" id="customCheck1" class="custom-control-input" >
@@ -210,7 +205,6 @@
                     <label class="custom-control-label" for="customCheck9"> ванна </label>
                 </div>
             </div>
-
             <div class="form-row">
                 <div class="custom-control custom-checkbox col-4" id="shower">
                     <input th:field="*{shower}" type="checkbox" name="shower" id="customCheck10" class="custom-control-input" >
@@ -225,7 +219,6 @@
                     <label class="custom-control-label" for="customCheck12"> интернет </label>
                 </div>
             </div>
-
             <div class="form-row">
                 <div class="custom-control custom-checkbox col-4" id="separateBathroom">
                     <input input th:field="*{separateBathroom}" type="checkbox" name="separateBathroom" id="customCheck13" class="custom-control-input" >
@@ -240,7 +233,6 @@
                     <label class="custom-control-label" for="customCheck15"> лифт </label>
                 </div>
             </div>
-
             <div class="form-row">
                 <div class="custom-control custom-checkbox col-4" id="ramp">
                     <input th:field="*{ramp}" type="checkbox" name="ramp" id="customCheck16" class="custom-control-input" >
@@ -248,12 +240,10 @@
                 </div>
 
             </div>
-
             <div class="form-group">
                 <label>Название комплекса</label>
                 <input th:field="*{nameOfComplex}" type="text" name="nameOfComplex" id="nameOfComplex">
             </div>
-
             <div class="form-group">
                 <label>Год постройки</label>
                 <input th:field="*{yearOfConstruction}" type="number" name="yearOfConstruction" id="yearOfConstruction">
@@ -262,6 +252,7 @@
                 <label>Заголовок</label>
                 <input th:field="*{title}" type="text" name="title" id="title">
             </div>
+
             <input type="hidden" th:field="*{user}"/>
             <input type="hidden" th:field="*{id}"/>
 

@@ -16,6 +16,7 @@ public class Address {
     @Column(name = "address")
     private String address;
     @Column(name = "image")
+    @Lob
     private byte[] image;
 
     public Address(String address, byte[] image) {

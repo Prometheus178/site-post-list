@@ -6,23 +6,25 @@
 
 
 <div class="container">
+    <label><h5> Кредитный калькулятор</h5></label>
+    <br/><br/>
     <div class="row ">
-        <form class="col-sm-8" th:object="${formInputAttribute}" method="post" action="/calculator/count"
-              enctype="multipart/form-data">
-            <div class="form-group">
-                <label>Cумма кредита</label>
-                <input th:field="*{amount}" class="form-control" type="number" name="amount">
-            </div>
-            <div class="form-group">
-                <label>На срок в месяцах</label>
-                <input th:field="*{period}" class="form-control" type="number" name="period">
-            </div>
-            <div class="form-group">
-                <label>Годовая ставка</label>
-                <input th:field="*{rateInYear}" class="form-control" type="number" name="rateInYear">
-            </div>
-            <button type="submit" class="btn btn-primary">Посчитать</button>
-        </form>
+            <form class="col-sm-8" th:object="${formInputAttribute}" method="post" action="/calculator/count" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Cумма кредита</label>
+                    <input th:field="*{amount}" class="form-control" type="number" name="amount">
+                </div>
+                <div class="form-group">
+                    <label>На срок в месяцах</label>
+                    <input th:field="*{period}" class="form-control" type="number" name="period">
+                </div>
+                <div class="form-group">
+                    <label>Годовая ставка</label>
+                    <input th:field="*{rateInYear}" class="form-control" type="number" name="rateInYear">
+                </div>
+                <button type="submit" class="btn btn-primary">Посчитать</button>
+            </form>
+
     </div>
 </div>
 

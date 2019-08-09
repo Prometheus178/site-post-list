@@ -1,11 +1,11 @@
 function hide(){
-    var earrings = document.getElementById('numberOfRoomsSearch');
-    earrings.style.display = 'none';
+    var numberOfRoom = document.getElementById('numberOfRoomsSearch');
+    numberOfRoom.style.display = 'none';
 }
 
 function show(){
-    var earrings = document.getElementById('numberOfRoomsSearch');
-    earrings.style.display = 'inline-block';
+    var numberOfRoom = document.getElementById('numberOfRoomsSearch');
+    numberOfRoom.style.display = 'inline-block';
 }
 
 function apartmentSelectHandler(select){
@@ -14,4 +14,5 @@ function apartmentSelectHandler(select){
     }else{
         hide();
     }}
+
 

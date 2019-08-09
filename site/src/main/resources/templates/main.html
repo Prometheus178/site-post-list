@@ -7,10 +7,10 @@
 <body>
 <div th:replace="fragments/header :: header"></div>
 
-<div class="container">
+<!--     Search-->
+<div th:replace="fragments/search :: search"/>
 
-    <!--     Search-->
-    <div th:replace="fragments/search :: search"/>
+<div class="container">
 
     <!--Posts-->
     <div th:replace="fragments/posts :: posts"/>

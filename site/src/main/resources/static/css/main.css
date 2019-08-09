@@ -53,7 +53,19 @@ a:hover, a:focus, a:active {
     height: auto;
 }
 .container {
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 8%;
 }
+.card-img{
+    margin-top: 6%;
+}
+.card-img-overlay{
+    padding-top: 17%;
+}
+
+
+
+
+
+
+
 

@@ -7,25 +7,31 @@ package com.realestate.site.models.post;
 import com.realestate.site.models.post.enums.*;
 import com.realestate.site.models.user.User;
 import com.realestate.site.utils.FormatDateTime;
-import lombok.Data;
+
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Arrays;
+import java.util.Set;
+import java.util.UUID;
+
 
 @Entity
 @Table(name = "posts")
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "posts_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "post_id")
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
     @NotNull
     private User user;
-    //todo 1 add String numberOfRoom
+
+    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL)
+    private Set<Photo> photos;
+
     @Column(name = "title")
     private String title;
     @Column(name = "date_time")
@@ -41,23 +47,16 @@ public class Post {
     @Column(name = "living")
     private Living living;
     @Column(name = "commercial")
-
     private Commercial commercial;
     @Column(name = "district")
-
     private District district;
     @Column(name = "address")
-
     private String address;
-
     @Column(name = "building_type")
     private BuildingType buildingType;
-
     @Column(name = "description")
     private String description;
 
-    @Column(name = "photo")
-    private byte[] photo;
 
     @Column(name = "price")
     private int price;
@@ -138,56 +137,7 @@ public class Post {
     @Column(name = "ramp")
     private boolean ramp;
 
-    public Post(User user, String title, String dateTime, AccountType accountType, DealType dealType, RentType rentType, RealEstateType realEstateType, Living living, Commercial commercial, District district, String address, BuildingType buildingType, String description, byte[] photo, int price, boolean communalPayments, NumberOfRooms numberOfRooms, Repairs repairs, int floor, double square, int deposit, String nameOfComplex, int yearOfConstruction, double squareOfLiving, double squareOfKitchen, boolean animal, boolean furniture, boolean windowInside, boolean windowOutside, boolean balcony, boolean loggia, boolean tv, boolean phone, boolean bath, boolean shower, boolean conditioner, boolean internet, boolean separateBathroom, boolean combinedBathroom, boolean lift, boolean ramp) {
-        this.user = user;
-        this.title = title;
-        this.dateTime = dateTime;
-        this.accountType = accountType;
-        this.dealType = dealType;
-        this.rentType = rentType;
-        this.realEstateType = realEstateType;
-        this.living = living;
-        this.commercial = commercial;
-        this.district = district;
-        this.address = address;
-        this.buildingType = buildingType;
-        this.description = description;
-        this.photo = photo;
-        this.price = price;
-        this.communalPayments = communalPayments;
-        this.numberOfRooms = numberOfRooms;
-        this.repairs = repairs;
-        this.floor = floor;
-        this.square = square;
-        this.deposit = deposit;
-        this.nameOfComplex = nameOfComplex;
-        this.yearOfConstruction = yearOfConstruction;
-        this.squareOfLiving = squareOfLiving;
-        this.squareOfKitchen = squareOfKitchen;
-        this.animal = animal;
-        this.furniture = furniture;
-        this.windowInside = windowInside;
-        this.windowOutside = windowOutside;
-        this.balcony = balcony;
-        this.loggia = loggia;
-        this.tv = tv;
-        this.phone = phone;
-        this.bath = bath;
-        this.shower = shower;
-        this.conditioner = conditioner;
-        this.internet = internet;
-        this.separateBathroom = separateBathroom;
-        this.combinedBathroom = combinedBathroom;
-        this.lift = lift;
-        this.ramp = ramp;
-    }
-
     public Post(){}
-
-    public String getDateTime() {
-        return FormatDateTime.getInstance().formattedDateTime(dateTime);
-    }
-
     public Long getId() {
         return id;
     }
@@ -204,12 +154,24 @@ public class Post {
         this.user = user;
     }
 
+    public Set<Photo> getPhotos() {
+        return photos;
+    }
+
+    public void setPhotos(Set<Photo> photos) {
+        this.photos = photos;
+    }
+
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDateTime() {
+        return dateTime;
     }
 
     public void setDateTime(String dateTime) {
@@ -294,14 +256,6 @@ public class Post {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public byte[] getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
     }
 
     public int getPrice() {
@@ -525,6 +479,7 @@ public class Post {
         return "Post{" +
                 "id=" + id +
                 ", user=" + user +
+                ", photos=" + photos +
                 ", title='" + title + '\'' +
                 ", dateTime='" + dateTime + '\'' +
                 ", accountType=" + accountType +
@@ -537,7 +492,6 @@ public class Post {
                 ", address='" + address + '\'' +
                 ", buildingType=" + buildingType +
                 ", description='" + description + '\'' +
-                ", photo=" + Arrays.toString(photo) +
                 ", price=" + price +
                 ", communalPayments=" + communalPayments +
                 ", numberOfRooms=" + numberOfRooms +
