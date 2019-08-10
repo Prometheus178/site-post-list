@@ -1,7 +1,7 @@
 package com.realestate.site.models.post.enums;
 
 public enum  District {
-
+    NONE("---"),
     KVARTAL103("103 квартал"),
     KVARTAL16("16 квартал"),
     KVARTAL17("17 квартал"),

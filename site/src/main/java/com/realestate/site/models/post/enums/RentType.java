@@ -1,6 +1,7 @@
 package com.realestate.site.models.post.enums;
 
 public enum RentType {
+    NONE("---"),
     LONG_TERM_RENT("Долгосрочная"),
     BY_THE_DAY ("Посуточно");
 

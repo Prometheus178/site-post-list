@@ -1,6 +1,7 @@
 package com.realestate.site.models.post.enums;
 
 public enum BuildingType {
+    NONE("---"),
     BLOCHNYI("Блочный"),
     DEREVYANNYI("Деревянный"),
     INDIVIDUAL("Индивидуальный"),
