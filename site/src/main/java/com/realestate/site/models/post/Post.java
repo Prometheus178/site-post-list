@@ -19,6 +19,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "posts")
 public class Post {
+    // TODO: 10.08.2019 номер телефона
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "post_id")
@@ -79,29 +80,8 @@ public class Post {
     @Column(name = "deposit")
     private int deposit;
 
-    @Column(name = "name_of_complex")
-    private String nameOfComplex;
-
-    @Column(name = "year_of_construction")
-    private int yearOfConstruction;
-    @Column(name = "squareOfLiving")
-
-    private double squareOfLiving;
-
-    @Column(name = "square_of_kitchen")
-    private double squareOfKitchen;
-
-    @Column(name = "animal")
-    private boolean animal;
-
     @Column(name = "furniture")
     private boolean furniture;
-
-    @Column(name = "window_inside")
-    private boolean windowInside;
-
-    @Column(name = "window_outside")
-    private boolean windowOutside;
 
     @Column(name = "balcony")
     private boolean balcony;
@@ -114,8 +94,8 @@ public class Post {
 
     @Column(name = "phone")
     private boolean phone;
-    @Column(name = "bath")
 
+    @Column(name = "bath")
     private boolean bath;
 
     @Column(name = "shower")
@@ -126,6 +106,7 @@ public class Post {
 
     @Column(name = "internet")
     private boolean internet;
+
     @Column(name = "separate_bathroom")
     private boolean separateBathroom;
 
@@ -134,10 +115,10 @@ public class Post {
 
     @Column(name = "lift")
     private boolean lift;
-    @Column(name = "ramp")
-    private boolean ramp;
+
 
     public Post(){}
+
     public Long getId() {
         return id;
     }
@@ -314,46 +295,6 @@ public class Post {
         this.deposit = deposit;
     }
 
-    public String getNameOfComplex() {
-        return nameOfComplex;
-    }
-
-    public void setNameOfComplex(String nameOfComplex) {
-        this.nameOfComplex = nameOfComplex;
-    }
-
-    public int getYearOfConstruction() {
-        return yearOfConstruction;
-    }
-
-    public void setYearOfConstruction(int yearOfConstruction) {
-        this.yearOfConstruction = yearOfConstruction;
-    }
-
-    public double getSquareOfLiving() {
-        return squareOfLiving;
-    }
-
-    public void setSquareOfLiving(double squareOfLiving) {
-        this.squareOfLiving = squareOfLiving;
-    }
-
-    public double getSquareOfKitchen() {
-        return squareOfKitchen;
-    }
-
-    public void setSquareOfKitchen(double squareOfKitchen) {
-        this.squareOfKitchen = squareOfKitchen;
-    }
-
-    public boolean isAnimal() {
-        return animal;
-    }
-
-    public void setAnimal(boolean animal) {
-        this.animal = animal;
-    }
-
     public boolean isFurniture() {
         return furniture;
     }
@@ -362,21 +303,6 @@ public class Post {
         this.furniture = furniture;
     }
 
-    public boolean isWindowInside() {
-        return windowInside;
-    }
-
-    public void setWindowInside(boolean windowInside) {
-        this.windowInside = windowInside;
-    }
-
-    public boolean isWindowOutside() {
-        return windowOutside;
-    }
-
-    public void setWindowOutside(boolean windowOutside) {
-        this.windowOutside = windowOutside;
-    }
 
     public boolean isBalcony() {
         return balcony;
@@ -466,13 +392,6 @@ public class Post {
         this.lift = lift;
     }
 
-    public boolean isRamp() {
-        return ramp;
-    }
-
-    public void setRamp(boolean ramp) {
-        this.ramp = ramp;
-    }
 
     @Override
     public String toString() {
@@ -499,14 +418,6 @@ public class Post {
                 ", floor=" + floor +
                 ", square=" + square +
                 ", deposit=" + deposit +
-                ", nameOfComplex='" + nameOfComplex + '\'' +
-                ", yearOfConstruction=" + yearOfConstruction +
-                ", squareOfLiving=" + squareOfLiving +
-                ", squareOfKitchen=" + squareOfKitchen +
-                ", animal=" + animal +
-                ", furniture=" + furniture +
-                ", windowInside=" + windowInside +
-                ", windowOutside=" + windowOutside +
                 ", balcony=" + balcony +
                 ", loggia=" + loggia +
                 ", tv=" + tv +
@@ -518,7 +429,6 @@ public class Post {
                 ", separateBathroom=" + separateBathroom +
                 ", combinedBathroom=" + combinedBathroom +
                 ", lift=" + lift +
-                ", ramp=" + ramp +
                 '}';
     }
 }
